@@ -1,5 +1,3 @@
-# BPC-DE2
-
 # Tropical plants
 Členové týmu
 
