@@ -1,4 +1,4 @@
-# BPC-DE2
+# BPC-DE2-Tropical plants
 
 # Topic 4: PWM-Based Tone Generator
 Členové týmu
