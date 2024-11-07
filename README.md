@@ -17,4 +17,4 @@
 
 
 ## Reference
-1. [Climate Chamber System (lapinoo.net)](https://vhdl.lapinoo.net/testbench/).
+1. [Climate Chamber System](https://vhdl.lapinoo.net/testbench/).
