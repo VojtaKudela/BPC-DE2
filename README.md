@@ -1,6 +1,6 @@
-# BPC-DE2-Tropical plants
+# BPC-DE2
 
-# Topic 4: PWM-Based Tone Generator
+# Tropical plants
 Členové týmu
 
 1. Vít Janoš (zodpovědný za )
