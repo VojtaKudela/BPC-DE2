@@ -6,15 +6,12 @@
 3. Jakub Kupčík (zodpovědný za )
 4. Antonín Putala (zodpovědný za )
 
-## Teoretický popis
+## Bloky
+1) Získávání dat
 
+2) Regulace veličin
 
-### Popis částí
-
-
-## Odkazy k projektu
-
-
+3) HMI rozhraní + UART
 
 ## Reference
 1. [Climate Chamber System](https://vhdl.lapinoo.net/testbench/).
