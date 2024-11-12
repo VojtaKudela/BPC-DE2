@@ -18,6 +18,7 @@
 > 7. regulátor vlhkosti
 > 8. činnost větráku
 
+### Poznámky
 > [!TIP]
 > - nastavení aktuálního času
 > - teplota + hystereze
@@ -30,7 +31,8 @@
 > ZPRACOVÁNÍ A ZOBRAZENÍ GRAFŮ
 > - teploty
 > - vlhkosti
-> - slanosti, osvětlení
+> - slanosti
+> - osvětlení
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
