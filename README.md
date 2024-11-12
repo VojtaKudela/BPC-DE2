@@ -7,11 +7,11 @@
 4. Antonín Putala (zodpovědný za )
 
 ## Bloky
-1) Získávání dat
+### ZÍSKÁNÍ DAT
 
-2) Regulace veličin
+### REGULACE VELIČIN
 
-3) HMI rozhraní + UART
+### HMI ROZHRANÍ + UART
 
 ## Reference
 1. [Climate Chamber System](https://vhdl.lapinoo.net/testbench/).
