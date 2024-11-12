@@ -9,14 +9,14 @@
 ## ÚKOLY
 > [!WARNING]
 > 1. adc-zvládnot číst data z obou portů
-2. PWM řízení intenzity osvětlení
-3. PYTHON-zvládnout přijímat a vysílat data z UARTu
-4. úprva knihoven
-   - teplota, vlhkost, CUMSUM
-   - získat veškerá tada z RTC
-6. regulátor teploty
-7. regulátor vlhkosti
-8. činnost větráku
+> 2. PWM řízení intenzity osvětlení
+> 3. PYTHON-zvládnout přijímat a vysílat data z UARTu
+> 4. úprva knihoven
+>    - teplota, vlhkost, CUMSUM
+>    - získat veškerá tada z RTC
+> 6. regulátor teploty
+> 7. regulátor vlhkosti
+> 8. činnost větráku
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
