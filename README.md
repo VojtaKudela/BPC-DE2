@@ -1,4 +1,4 @@
-# Tropical plants
+# Tropical plants :potted_plant: :cactus:
 Členové týmu
 
 1. Vít Janoš (zodpovědný za )
