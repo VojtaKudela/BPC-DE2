@@ -18,7 +18,7 @@
 > 7. regulátor vlhkosti
 > 8. činnost větráku
 
-### Poznámky
+## Poznámky
 > [!TIP]
 > - nastavení aktuálního času
 > - teplota + hystereze
