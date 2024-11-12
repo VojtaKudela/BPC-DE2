@@ -18,6 +18,20 @@
 > 7. regulátor vlhkosti
 > 8. činnost větráku
 
+> [!TIP]
+> - nastavení aktuálního času
+> - teplota + hystereze
+> - vlhkost + hystereze
+>    -  při překročení obou se spustí větrák
+> - soil measure - pro informaci -> _**nepůjde regulovat**_
+> - osvětlení - není třeba hystereze
+
+> [!IMPORTANT]
+> ZPRACOVÁNÍ A ZOBRAZENÍ GRAFŮ
+> - teploty
+> - vlhkosti
+> - slanosti, osvětlení
+
 ## Bloky
 ### ZÍSKÁNÍ DAT
 - [ ] 1. adc-zajistit získání hodnoty z _fotorezistoru_ a _soil čidla_ (knihovna)
