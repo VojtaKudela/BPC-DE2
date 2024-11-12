@@ -7,7 +7,7 @@
 4. Antonín Putala (zodpovědný za )
 
 ## ÚKOLY
-> [!WARNING]
+> [!úkoly]
 > Urgent info that needs immediate user attention to avoid problems.
 1. adc-zvládnot číst data z obou portů
 2. PWM řízení intenzity osvětlení
