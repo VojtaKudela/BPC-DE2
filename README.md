@@ -20,8 +20,8 @@
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
-1. adc-zajistit získání hodnoty z _fotorezistoru_ a _soil čidla_ (knihovna [ ]
-2. převést na _**SMYSLUPLNOU HODNOTU**_ [ ]
+- [ ] 1. adc-zajistit získání hodnoty z _fotorezistoru_ a _soil čidla_ (knihovna)
+2. převést na _**SMYSLUPLNOU HODNOTU**_
 3. zajistit získání dat z _teplotního čidla_
 4. zajisti _získání dat z RTC_
 5. časování odečtu
