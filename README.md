@@ -8,7 +8,11 @@
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
-
+1. Jak
+2. kdo
+3. co
+4. kdy
+   
 ### REGULACE VELIČIN
 
 ### HMI ROZHRANÍ + UART
