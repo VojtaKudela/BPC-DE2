@@ -1,8 +1,8 @@
 # Tropical plants :palm_tree::potted_plant::cactus:
 Členové týmu
 
-1. Vít Janoš (zodpovědný za regulaci veličin)
-2. Vojtěch Kudela (zodpovědný za správu GitHub a regulaci veličin)
+1. Vít Janoš (zodpovědný za PWM)
+2. Vojtěch Kudela (zodpovědný za správu GitHub a knihoven)
 3. Jakub Kupčík (zodpovědný za získání dat)
 4. Antonín Putala (zodpovědný za HMI a UART)
 
