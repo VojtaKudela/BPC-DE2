@@ -43,7 +43,7 @@
 - [ ] 5. časování odečtu
    
 ### REGULACE VELIČIN
-- [ ] 1. PWM-rozjet (např na 1 LED)
+- [ ] 1. PWM-rozjet (např. na 1 LED)
 - [ ] 2. knihovny pro relátka - každá **samostatná** knihovna bude obsahovat _**komparaci parametrů**_
 - [ ] 3. implementace regulace osvětlení
 
