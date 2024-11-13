@@ -31,14 +31,11 @@
  */
 void PWM_enable();
 
-
 /**
  * @brief  Configures the duty cycle
  * @param  duty Sets the required duty cycle wher 0 is 0% and 255 is 100%
  * @return none
  */
 void PWM_set_duty(volatile uint8_t duty);
-
-
 
 #endif
