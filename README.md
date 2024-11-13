@@ -2,8 +2,8 @@
 Členové týmu
 
 1. Vít Janoš (zodpovědný za regulaci veličin)
-2. Vojtěch Kudela (zodpovědný za správu GitHub a PWM)
-3. Jakub Kupčík (zodpovědný za regulaci veličin)
+2. Vojtěch Kudela (zodpovědný za správu GitHub a regulaci veličin)
+3. Jakub Kupčík (zodpovědný za získání dat)
 4. Antonín Putala (zodpovědný za HMI a UART)
 
 ## ÚKOLY
