@@ -1,0 +1,23 @@
+// Test code for PWM also need the gpio libary to work
+// Non-inverted fast PWM output on pin PD6
+
+#include <util/delay.h>
+#include <pwm.h>
+
+int main(void)
+{
+  PWM_enable();
+  PWM_set_duty(0);
+
+  int i;
+  while (1)
+  {
+    for (i = 0; i < 255; i++ )
+    {
+      _delay_ms(50);
+      PWM_set_duty(i);
+    }   
+    
+  PWM_set_duty(0);
+  }
+}
