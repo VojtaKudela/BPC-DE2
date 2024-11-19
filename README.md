@@ -13,7 +13,7 @@
 > 3. PYTHON-zvládnout přijímat a vysílat data z UARTu
 > 4. úprava knihoven
 >    - teplota, vlhkost, CUMSUM
->    - získat veškerá tada z RTC
+>    - získat veškerá data z RTC
 > 6. regulátor teploty
 > 7. regulátor vlhkosti
 > 8. činnost větráku
