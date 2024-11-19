@@ -11,7 +11,7 @@
 > 1. adc-zvládnot číst data z obou portů
 > 2. PWM řízení intenzity osvětlení
 > 3. PYTHON-zvládnout přijímat a vysílat data z UARTu
-> 4. úprva knihoven
+> 4. úprava knihoven
 >    - teplota, vlhkost, CUMSUM
 >    - získat veškerá tada z RTC
 > 6. regulátor teploty
