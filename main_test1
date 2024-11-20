@@ -1,0 +1,161 @@
+#include <Arduino.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <uart.h>           // Peter Fleury's UART library
+#include <timer.h>
+#include <util/twi.h>       // Standard TWI/I2C library
+#include <twi.h>
+
+#ifndef F_CPU
+# define F_CPU 16000000  // CPU frequency in Hz required for UART_BAUD_SELECT
+#endif
+
+// Global Variables
+volatile uint8_t update_data = 0;
+
+struct data_packet {
+   volatile uint8_t year;
+   volatile uint8_t month;
+   volatile uint8_t date;
+   volatile uint8_t day;
+   volatile uint8_t hour;
+   volatile uint8_t minute;
+   volatile uint8_t second;
+   volatile uint8_t hum_int;
+   volatile uint8_t hum_dec;
+   volatile uint8_t temp_int;
+   volatile uint8_t temp_dec;
+   volatile uint8_t lux;
+   volatile uint8_t soil;
+   volatile uint8_t mask;
+} dp;
+
+// RTC Definitions
+#define RTC_ADR 0x68
+#define RTC_SEC_MEM 0x00
+#define RTC_MIN_MEM 0x01
+#define RTC_HOUR_MEM 0x02
+#define RTC_DATE_MEM 0x04
+#define RTC_MONTH_MEM 0x05
+#define RTC_YEAR_MEM 0x06
+
+// DHT Sensor Definitions
+#define DHT_ADR 0x5c
+#define DHT_HUM_MEM 0
+#define DHT_TEMP_MEM 2
+
+// Startup
+void startup(void)
+{
+    uart_init(UART_BAUD_SELECT(115200, F_CPU));
+    twi_init();  // Initialize I2C (TWI)
+    TIM1_ovf_1sec();
+    TIM1_ovf_enable();
+    sei();
+}
+
+// RTC
+uint8_t read_rtc_register(uint8_t reg)
+{
+    uint8_t value;
+
+ 
+    twi_start();
+    twi_write(RTC_ADR << 1);        // RTC I2C address
+    twi_write(reg);                 // Register to read
+    twi_stop();
+
+    // Start communication again for reading
+    twi_start();
+    twi_write((RTC_ADR << 1) | 1);  // Set the read bit
+    value = twi_read(TWI_NACK);     // Read value from RTC register
+    twi_stop();                     // Stop communication
+
+    return value;
+}
+
+void read_rtc_data(void)
+{
+    dp.second = read_rtc_register(RTC_SEC_MEM);
+    dp.minute = read_rtc_register(RTC_MIN_MEM);
+    dp.hour = read_rtc_register(RTC_HOUR_MEM);
+    dp.date = read_rtc_register(RTC_DATE_MEM);
+    dp.month = read_rtc_register(RTC_MONTH_MEM);
+    dp.year = read_rtc_register(RTC_YEAR_MEM);
+}
+
+// DHT Sensor Functions
+void read_dht_data(void)
+{
+    uint8_t hum_raw[2], temp_raw[2];
+
+    // Read humidity
+    twi_start();
+    twi_write(DHT_ADR << 1);  // Start communication with DHT
+    twi_write(DHT_HUM_MEM);   // Point to humidity register
+    twi_stop();
+
+    twi_start();
+    twi_write((DHT_ADR << 1) | 1);   // Read operation
+    hum_raw[0] = twi_read(TWI_ACK);  // Read high byte of humidity
+    hum_raw[1] = twi_read(TWI_NACK); // Read low byte of humidity
+    twi_stop();
+
+    // Read temperature
+    twi_start();
+    twi_write(DHT_ADR << 1);   // Start communication with DHT
+    twi_write(DHT_TEMP_MEM);   // Point to temperature register
+    twi_stop();
+
+    twi_start();
+    twi_write((DHT_ADR << 1) | 1); // Read operation
+    temp_raw[0] = twi_read(TWI_ACK);  // Read high byte of temperature
+    temp_raw[1] = twi_read(TWI_NACK); // Read low byte of temperature
+    twi_stop();
+
+    dp.hum_int = hum_raw[0];
+    dp.hum_dec = hum_raw[1];
+    dp.temp_int = temp_raw[0];
+    dp.temp_dec = temp_raw[1];
+}
+
+int main(void)
+{
+    startup();
+
+    while (1)
+    {
+        if (update_data == 1)
+        {
+            // Read RTC and DHT data
+            read_rtc_data();
+            read_dht_data();
+
+            // Send updated data via UART
+            uart_putc(dp.year);
+            uart_putc(dp.month);
+            uart_putc(dp.date);
+            uart_putc(dp.day);
+            uart_putc(dp.hour);
+            uart_putc(dp.minute);
+            uart_putc(dp.second);
+            uart_putc(dp.hum_int);
+            uart_putc(dp.hum_dec);
+            uart_putc(dp.temp_int);
+            uart_putc(dp.temp_dec);
+            uart_putc(dp.lux);    // Not being updated in this version
+            uart_putc(dp.soil);   // Not being updated in this version
+            uart_putc(dp.mask);   // Not being updated in this version
+            update_data = 0;
+        }
+    }
+
+    return 0;
+}
+
+ISR(TIMER1_OVF_vect)
+{
+    update_data = 1;
+}
+
+
