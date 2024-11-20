@@ -12,7 +12,7 @@
 > 2. PWM řízení intenzity osvětlení
 > 3. PYTHON-zvládnout přijímat a vysílat data z UARTu
 > 4. úprava knihoven
->    - teplota, vlhkost, CUMSUM
+>    - teplota, vlhkost, _**cumsum**_ 
 >    - získat veškerá data z RTC
 > 6. regulátor teploty
 > 7. regulátor vlhkosti
@@ -45,7 +45,8 @@
 ### REGULACE VELIČIN
 - [ ] 1. PWM-rozjet (např. na 1 LED)
 - [ ] 2. knihovny pro relátka - každá **samostatná** knihovna bude obsahovat _**komparaci parametrů**_
-- [ ] 3. implementace regulace osvětlení
+- [ ] 3. knihovna pro cumsum - musí zjišťovat, zda se hodnoty rovnají -> v opačném případě se vrovede úkon 
+- [ ] 4. implementace regulace osvětlení
 
 ### HMI ROZHRANÍ + UART
 - [ ] 1. zajištění komunikace přes UART
