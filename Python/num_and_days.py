@@ -1,0 +1,33 @@
+def day2num(day):
+        match (day):
+            case 'Mo':
+                return 1
+            case 'Tu':
+                return 2
+            case 'We':
+                return 3
+            case 'Th':
+                return 4
+            case 'Fr':
+                return 5
+            case 'Sa':
+                return 6
+            case _:
+                return 7
+            
+def num2day(num):
+        match (num):
+            case 1:
+                return 'Mo'
+            case 2:
+                return 'Tu'
+            case 3:
+                return 'We'
+            case 4:
+                return 'Th'
+            case 5:
+                return 'Fr'
+            case 6:
+                return 'Sa'
+            case _:
+                return 'Su'
