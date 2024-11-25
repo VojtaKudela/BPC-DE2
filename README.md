@@ -10,7 +10,6 @@
 > [!WARNING]
 > 1. adc-zvládnot číst data z obou portů
 > 2. PWM řízení intenzity osvětlení
-> 3. PYTHON-zvládnout přijímat a vysílat data z UARTu
 > 4. úprava knihoven
 >    - teplota, vlhkost, _**cumsum**_ 
 >    - získat veškerá data z RTC
