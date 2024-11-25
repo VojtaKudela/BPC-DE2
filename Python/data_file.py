@@ -87,7 +87,7 @@ class data_file:
             f = open("database.txt","a")
         except:
             f = open("database.txt","w")
-            f.write(f'\nYear\tMo\tDa\tDy\tHour\tMin\tSec\tTemp\tHuma\tLig\tSoil\t\n')
+            f.write(f'Year\tMo\tDa\tDy\tHour\tMin\tSec\tTemp\tHuma\tLig\tSoil\t\n')
         finally:
             f.close()
 

@@ -6,6 +6,7 @@ from soil_GUI import soil_GUI
 from hum_GUI import hum_GUI
 from temp_GUI import temp_GUI
 from time_GUI import time_GUI
+from graph_GUI import graph_GUI
 from update_measure_value_func import update_temp,update_hum,update_soil,update_ilu
 from data_func import default_data,full_reg_data
 from raw_data import raw_data
@@ -70,7 +71,8 @@ class App(ckt.CTk):
         self.time_win.mainloop()
 
     def GUI_graph_res(self):
-        print("TONY!!!")
+        self.graph_win = graph_GUI() #(self)
+        self.graph_win.mainloop()
 
     def update_settings(self):
         temp = str(self.setting['ilu_val']) + " lx"
@@ -102,10 +104,12 @@ class App(ckt.CTk):
     def send_time_packet(self):
         if (self.phase == 2):
             print(self.time_packet)####
+            self.send_message(self.time_packet)
 
     def send_reg_packet(self):
         if (self.phase == 2):
             print(self.reg_packet)####
+            self.send_message(self.reg_packet)
 
     def create_reg_packet(self):         
         full_reg_data(self)
@@ -147,6 +151,19 @@ class App(ckt.CTk):
         if self.serial_connection and self.serial_connection.is_open:
             self.serial_connection.close()
             #print("Serial connection closed.\n")
+    
+    def send_message(self,message):
+        if self.serial_connection and self.serial_connection.is_open:
+            if message:
+                try:
+                    self.serial_connection.write(message)
+                    print(f"Sent: {message}\n")
+                except Exception as e:
+                    print(f"Error sending message: {e}\n")#
+            else:#
+                print("No message to send.\n")#
+        else:#
+            print("Serial connection not open.\n")#
 
 if __name__ == "__main__":  
     interface = App("COM3",9600)

@@ -7,6 +7,7 @@ class database:
         self.data = []
 
     def load_data(self):
+        self.data = []
         f = open("database.txt","r")
         lines = f.readlines()
 
