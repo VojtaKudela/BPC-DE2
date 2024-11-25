@@ -18,9 +18,6 @@ import threading
 class App(ckt.CTk):
     def __init__(self, nserial_port = "COM3", nbaud_rate=9600):
         super().__init__()
-        self.title("Tropical plants")
-        self.resizable(False, False) 
-        self.geometry("800x500")
         createGUI(self)
         self.default_data()
         self.serial_port = nserial_port

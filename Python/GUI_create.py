@@ -9,6 +9,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import numpy as np
 
 def createGUI(self):
+    self.title("Tropical plants")
+    self.resizable(False, False) 
+    self.geometry("800x500")
+    
     createGUIshow(self)
     createGUIset(self)
 
