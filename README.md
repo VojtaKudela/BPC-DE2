@@ -53,6 +53,11 @@
 - [ ] 3. databáze
 - [ ] 4. regulace
 
+## Použité nástroje
+1. [ChatGPT](https://chatgpt.com/)
+2. [Microsoft Copilot](https://copilot.microsoft.com/)
+3. [SimulIDE](https://simulide.com/p/)
+
 ## Reference
 1. [Climate Chamber System](https://projecthub.arduino.cc/ms_peach/climate-chamber-system-c545de).
 2. [Learning AVR-C Episode 7: PWM](https://www.youtube.com/watch?v=ZhIRRyhfhLM&list=PLA6BB228B08B03EDD&index=7).
