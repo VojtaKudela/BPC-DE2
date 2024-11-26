@@ -57,6 +57,7 @@
 1. [ChatGPT](https://chatgpt.com/)
 2. [Microsoft Copilot](https://copilot.microsoft.com/)
 3. [SimulIDE](https://simulide.com/p/)
+4. [Saleae Logic 2](https://www.saleae.com/pages/downloads)
 
 ## Reference
 1. [Climate Chamber System](https://projecthub.arduino.cc/ms_peach/climate-chamber-system-c545de).
