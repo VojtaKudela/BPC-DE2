@@ -62,4 +62,5 @@
 1. [Climate Chamber System](https://projecthub.arduino.cc/ms_peach/climate-chamber-system-c545de).
 2. [Learning AVR-C Episode 7: PWM](https://www.youtube.com/watch?v=ZhIRRyhfhLM&list=PLA6BB228B08B03EDD&index=7).
 3. [Learning AVR-C Episode 8: Analog Input](https://www.youtube.com/watch?v=51QJ_WHN7u0&list=PLA6BB228B08B03EDD&index=8&fbclid=IwY2xjawGghWBleHRuA2FlbQIxMAABHVy7dx15Emsi53adUYbmtC7HX_bKwPgDDZE106S3zNYXwdnrUu0nhW8zyA_aem_Rj_25ybcyhsOJBNBMxLZ1Q).
-4. [Custom Tkinter - Official Dokumentation](https://customtkinter.tomschimansky.com/)
+4. [Custom Tkinter - Official Documentation](https://customtkinter.tomschimansky.com/)
+5. [pySerial's documentation](https://pyserial.readthedocs.io/en/latest/)
