@@ -42,7 +42,7 @@
 - [ ] 5. časování odečtu
    
 ### REGULACE VELIČIN
-- [ ] 1. PWM-rozjet (např. na 1 LED)
+- [x] 1. PWM-rozjet (např. na 1 LED)
 - [ ] 2. knihovny pro relátka - každá **samostatná** knihovna bude obsahovat _**komparaci parametrů**_
 - [ ] 3. knihovna pro cumsum - musí zjišťovat, zda se hodnoty rovnají -> v opačném případě se provede úkon 
 - [ ] 4. implementace regulace osvětlení
@@ -51,7 +51,7 @@
 - [x] 1. zajištění komunikace přes UART
 - [x] 2. vytahat data + zobrazit budíky
 - [x] 3. databáze
-- [x] 4. regulace
+- [ ] 4. regulace
 
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
