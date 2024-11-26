@@ -54,10 +54,12 @@
 - [ ] 4. regulace
 
 ## Použité nástroje
+1. [VS Code](https://code.visualstudio.com/)
 1. [ChatGPT](https://chatgpt.com/)
 2. [Microsoft Copilot](https://copilot.microsoft.com/)
 3. [SimulIDE](https://simulide.com/p/)
 4. [Saleae Logic 2](https://www.saleae.com/pages/downloads)
+5. [Online C compiler](https://www.online-cpp.com/online_c_compiler)
 
 ## Reference
 1. [Climate Chamber System](https://projecthub.arduino.cc/ms_peach/climate-chamber-system-c545de).
@@ -65,3 +67,5 @@
 3. [Learning AVR-C Episode 8: Analog Input](https://www.youtube.com/watch?v=51QJ_WHN7u0&list=PLA6BB228B08B03EDD&index=8&fbclid=IwY2xjawGghWBleHRuA2FlbQIxMAABHVy7dx15Emsi53adUYbmtC7HX_bKwPgDDZE106S3zNYXwdnrUu0nhW8zyA_aem_Rj_25ybcyhsOJBNBMxLZ1Q).
 4. [Custom Tkinter - Official Documentation](https://customtkinter.tomschimansky.com/)
 5. [pySerial's documentation](https://pyserial.readthedocs.io/en/latest/)
+6. [ASCII table](https://www.ascii-code.com/)
+7. [ATMEGA328P- datasheet](https://www.microchip.com/en-us/product/ATmega328p)
