@@ -88,11 +88,11 @@ class data_file:
             f = open("database.txt","a")
         except:
             f = open("database.txt","w")
-            f.write(f'Year\tMo\tDa\tDy\tHour\tMin\tSec\tTemp\tHuma\tLig\tSoil\t\n')
+            f.write(f'Year\tMo\tDa\tDy\tHour\tMin\tSec\tTemp\tHuma\tLig\tSoil\t')
         finally:
             f.close()
 
     def save_data(self):
         f = open("database.txt","a")
-        f.write(f'{self.year}\t{self.month}\t{self.date}\t{self.day}\t{self.hour}\t{self.min}\t{self.sec}\t{self.temp}\t{self.hum}\t{self.lig}\t{self.soil}\t\n')
+        f.write(f'\n{self.year}\t{self.month}\t{self.date}\t{self.day}\t{self.hour}\t{self.min}\t{self.sec}\t{self.temp}\t{self.hum}\t{self.lig}\t{self.soil}\t')
         f.close()
