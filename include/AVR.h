@@ -22,8 +22,8 @@ This section is to be added at the start of the program to load AVR.h and define
 #include "AVR.h"
 
 volatile uint16_t data = 0;
-volatile uint16_t data_0 = 0;
-volatile uint16_t data_1 = 0;
+volatile uint16_t data_5 = 0;
+volatile uint16_t data_4 = 0;
 volatile uint8_t reset = 0;
 volatile uint8_t counter = 0;
 
@@ -71,9 +71,9 @@ This section is to be added to main function to an infinite loop to handle split
     if (reset == 1)
     {
         if (ADMUX & (1 << MUX0)) {
-        data_0 = data;
+        data_5 = data;
         } else {
-        data_1 = data;
+        data_4 = data;
         }
     }
   }
