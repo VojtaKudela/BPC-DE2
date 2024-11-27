@@ -68,7 +68,7 @@ class App(ckt.CTk):
         self.time_win.mainloop()
 
     def GUI_graph_res(self):
-        self.graph_win = graph_GUI() #(self)
+        self.graph_win = graph_GUI()
         self.graph_win.mainloop()
 
     def update_settings(self):
@@ -100,12 +100,10 @@ class App(ckt.CTk):
 
     def send_time_packet(self):
         if (self.phase == 2):
-            print(self.time_packet)####
             self.send_message(self.time_packet)
 
     def send_reg_packet(self):
         if (self.phase == 2):
-            print(self.reg_packet)####
             self.send_message(self.reg_packet)
 
     def create_reg_packet(self):         
@@ -117,7 +115,6 @@ class App(ckt.CTk):
             self.serial_thread = threading.Thread(target=self.read_from_serial, daemon=True)
             self.serial_thread.start()
         except serial.SerialException as e:
-            #print(f"Error: {e}\n")
             return 1
         else: 
             return 0
@@ -129,7 +126,8 @@ class App(ckt.CTk):
                     line = self.serial_connection.readline()
 
                 except Exception as e:
-                    print(f"Error reading data: {e}\n")#?
+                    return
+                    #print(f"Error reading data: {e}\n")#?
                 else:
                     raw = raw_data()
                     for i in range (0,13,1):
@@ -154,14 +152,13 @@ class App(ckt.CTk):
             if message:
                 try:
                     self.serial_connection.write(message)
-                    print(f"Sent: {message}\n")
+                    #print(f"Sent: {message}\n")
                 except Exception as e:
-                    print(f"Error sending message: {e}\n")#
+                    return
+                    #print(f"Error sending message: {e}\n")#
             else:#
-                print("No message to send.\n")#
+                return
+                #print("No message to send.\n")#
         else:#
-            print("Serial connection not open.\n")#
-
-if __name__ == "__main__":  
-    interface = App("COM3",9600)
-    interface.mainloop()
+            return
+            #print("Serial connection not open.\n")#
