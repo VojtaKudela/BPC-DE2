@@ -78,7 +78,7 @@ class data_file:
         
     def get_year(self,raw_data):
         if (len(raw_data)>12):
-            return (raw_data[-13]>>4)*10+(raw_data[-13]&15)+2000+(raw_data[-12]>>7)*100
+            return (raw_data[-13]>>4)*10+(raw_data[-13]&15)+1900+(raw_data[-12]>>7)*100
         
     def show_data(self):
         print(f'{self.year}-{self.month}-{self.date} {self.day} {self.hour}:{self.min}:{self.sec} - {self.temp}°C, {self.hum} %, {self.lig} lx, {self.soil} %')
