@@ -51,7 +51,7 @@
 - [x] 1. zajištění komunikace přes UART
 - [x] 2. vytahat data + zobrazit budíky
 - [x] 3. databáze
-- [ ] 4. regulace
+- [x] 4. regulace
 
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
