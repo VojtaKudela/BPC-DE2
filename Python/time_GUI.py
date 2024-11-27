@@ -75,7 +75,7 @@ class time_GUI(ckt.CTk):
 
     ## Create time packet
                         self.master.time_packet[1] |= (((year//10)<<4) | (year%10))
-                        self.master.time_packet[2] |= (((month//10)<<4) | (month%10))
+                        self.master.time_packet[2] |= (1 << 7) | (((month//10)<<4) | (month%10))
                         self.master.time_packet[3] |= (((date//10)<<4) | (date%10))
                         self.master.time_packet[4] |= day
                         self.master.time_packet[5] |= (((hour//10)<<4) | (hour%10))
