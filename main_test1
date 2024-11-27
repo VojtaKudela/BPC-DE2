@@ -129,7 +129,7 @@ int main(void)
     startup();
 
     // Example: Set the mask to a default value
-    set_mask(10); // Tony tady si nastav jakou hodnotu potřebuješ, pak komentář smaž!! (Zapoměl jsem jakou jsi tam chtěl :D)
+    set_mask(10); // Tony tady si nastav jakou hodnotu potřebuješ, pak komentář smaž!! (Zapomněl jsem jakou jsi tam chtěl :D)
 
     while (1)
     {
