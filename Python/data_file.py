@@ -45,11 +45,12 @@ class data_file:
         
     def get_temp(self,raw_data):
         if (len(raw_data)>3):
-            return (raw_data[-4]>>4)*10+(raw_data[-4]&15)+raw_data[-3]*0.1
-        
+            return raw_data[-4]+raw_data[-3]*0.1
+        #(raw_data[-4]>>4)*10+(raw_data[-4]&15)+raw_data[-3]*0.1
+
     def get_hum(self,raw_data):
         if (len(raw_data)>5):
-            return (raw_data[-6]>>4)*10+(raw_data[-6]&15)+raw_data[-5]*0.1
+            return raw_data[-6]+raw_data[-5]*0.1 # (raw_data[-6]>>4)*10+(raw_data[-6]&15)+raw_data[-5]*0.1
         
     def get_sec(self,raw_data):
         if (len(raw_data)>6):
