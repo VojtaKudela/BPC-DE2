@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <uart.h>           // Peter Fleury's UART library
+#include <uart.h>
 #include <timer.h>
-#include <util/twi.h>       // Standard TWI/I2C library
+#include <util/twi.h>
 #include <twi.h>
 
 #ifndef F_CPU
@@ -48,7 +48,7 @@ struct data_packet {
 void startup(void)
 {
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
-    twi_init();  // Initialize I2C (TWI)
+    twi_init();
     TIM1_ovf_1sec();
     TIM1_ovf_enable();
     sei();
@@ -59,13 +59,11 @@ uint8_t read_rtc_register(uint8_t reg)
 {
     uint8_t value;
 
- 
     twi_start();
     twi_write(RTC_ADR << 1);        // RTC I2C address
     twi_write(reg);                 // Register to read
     twi_stop();
 
-    // Start communication again for reading
     twi_start();
     twi_write((RTC_ADR << 1) | 1);  // Set the read bit
     value = twi_read(TWI_NACK);     // Read value from RTC register
@@ -119,9 +117,19 @@ void read_dht_data(void)
     dp.temp_dec = temp_raw[1];
 }
 
+// Function to set the mask value
+void set_mask(uint8_t new_mask)
+{
+    dp.mask = new_mask;
+}
+
+// Main loop
 int main(void)
 {
     startup();
+
+    // Example: Set the mask to a default value
+    set_mask(10); // Tony tady si nastav jakou hodnotu potřebuješ, pak komentář smaž!! (Zapoměl jsem jakou jsi tam chtěl :D)
 
     while (1)
     {
@@ -130,6 +138,13 @@ int main(void)
             // Read RTC and DHT data
             read_rtc_data();
             read_dht_data();
+
+            // Check mask conditions for lux and soil
+            if (dp.lux == dp.mask)
+                dp.lux += 1;
+
+            if (dp.soil == dp.mask)
+                dp.soil += 1;
 
             // Send updated data via UART
             uart_putc(dp.year);
@@ -143,9 +158,9 @@ int main(void)
             uart_putc(dp.hum_dec);
             uart_putc(dp.temp_int);
             uart_putc(dp.temp_dec);
-            uart_putc(dp.lux);    // Not being updated in this version
-            uart_putc(dp.soil);   // Not being updated in this version
-            uart_putc(dp.mask);   // Not being updated in this version
+            uart_putc(dp.lux);
+            uart_putc(dp.soil);
+            uart_putc(dp.mask);
             update_data = 0;
         }
     }
@@ -157,5 +172,3 @@ ISR(TIMER1_OVF_vect)
 {
     update_data = 1;
 }
-
-
