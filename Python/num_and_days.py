@@ -13,7 +13,7 @@ def day2num(day):
             case 'Sa':
                 return 6
             case _:
-                return 7
+                return 0
             
 def num2day(num):
         match (num):
