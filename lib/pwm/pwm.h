@@ -2,7 +2,7 @@
 # define pwm_H
 /* 
  * PWM libary
- * (c) Vít Janoš 2024
+ * (c) Vit Janos 2024
  *
  * Developed using PlatformIO and AVR 8-bit Toolchain 3.6.2.
  * Tested on Arduino Uno board and ATmega328P, 16 MHz.
@@ -18,8 +18,8 @@
  * The library contains functions for controlling AVRs' PWM.
  *
  * @note Hope it works
- * @copyright (c) Vít Janoš 2024
- * @
+ * @copyright (c) Vit Janos 2024
+ * @{
  */
 /* Includes -----------------------------------------------*/
 #include <avr/io.h>
@@ -47,4 +47,5 @@ void PWM_set_duty(volatile uint8_t duty);
  */
 void PWM_control(uint16_t current_value, uint16_t set_value, uint8_t step);
 
+/** @} */
 #endif

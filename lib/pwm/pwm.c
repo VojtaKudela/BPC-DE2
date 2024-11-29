@@ -1,6 +1,6 @@
 /* 
  * PWM libary
- * (c) Vít Janoš 2024
+ * (c) Vit Janos 2024
  *
  * Developed using PlatformIO and AVR 8-bit Toolchain 3.6.2.
  * Tested on Arduino Uno board and ATmega328P, 16 MHz.
