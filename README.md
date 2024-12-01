@@ -76,3 +76,4 @@
 6. [ASCII table](https://www.ascii-code.com/)
 7. [ATMEGA328P- datasheet](https://www.microchip.com/en-us/product/ATmega328p)
 8. [Soil moisure](https://www.makerguides.com/capacitive-soil-moisture-sensor-with-arduino/)
+9. [Arduino map()](https://reference.arduino.cc/reference/en/language/functions/math/map/)
