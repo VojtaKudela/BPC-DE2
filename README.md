@@ -54,10 +54,10 @@
 - [x] 4. regulace
 
 ### KOMPLEMENTACE
-- [] 1. komplementace zařízení
-- [] 2. video
-- [] 3. schéma zapojení
-- [] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
+- [ ] 1. komplementace zařízení
+- [ ] 2. video
+- [ ] 3. schéma zapojení
+- [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
