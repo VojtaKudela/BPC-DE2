@@ -75,3 +75,4 @@
 5. [pySerial's documentation](https://pyserial.readthedocs.io/en/latest/)
 6. [ASCII table](https://www.ascii-code.com/)
 7. [ATMEGA328P- datasheet](https://www.microchip.com/en-us/product/ATmega328p)
+8. [Soil moisure](https://www.makerguides.com/capacitive-soil-moisture-sensor-with-arduino/)
