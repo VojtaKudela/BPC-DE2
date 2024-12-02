@@ -59,6 +59,9 @@
 - [ ] 3. schéma zapojení
 - [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
+## Dokumentace
+1. [PC rozhraní](Documentation/Python/html/index.html)
+
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
 1. [ChatGPT](https://chatgpt.com/)
