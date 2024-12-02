@@ -60,8 +60,9 @@
 - [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
 ## Dokumentace
-1. [PC rozhraní](Documentation/Python/html/index.html)
+1. [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
 
+Documentation/Python/html/index.html
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
 1. [ChatGPT](https://chatgpt.com/)
