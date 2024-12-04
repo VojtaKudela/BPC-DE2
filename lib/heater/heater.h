@@ -12,7 +12,7 @@
 
 /**
  * @file 
- * @defgroup kudela_heater Heater Library <heater.h>
+ * @defgroup kudela_heater GPIO Library <heater.h>
  * @code #include <heater.h> @endcode
  *
  * @brief Heater, fan and inhalator regulation library for AVR-GCC.
