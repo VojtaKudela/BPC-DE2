@@ -36,7 +36,7 @@
 ## Bloky
 ### ZÍSKÁNÍ DAT
 - [x] 1. adc-zajistit získání hodnoty z _fotorezistoru_ a _soil čidla_ (knihovna)
-- [ ] 2. převést na _**SMYSLUPLNOU HODNOTU**_
+- [x] 2. převést na _**SMYSLUPLNOU HODNOTU**_
 - [x] 3. zajistit získání dat z _teplotního čidla_
 - [x] 4. zajisti _získání dat z RTC_
 - [x] 5. časování odečtu
@@ -54,8 +54,8 @@
 - [x] 4. regulace
 
 ### KOMPLEMENTACE
-- [ ] 1. komplementace zařízení
-- [ ] 2. video
+- [x] 1. komplementace zařízení
+- [x] 2. video
 - [ ] 3. schéma zapojení
 - [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
