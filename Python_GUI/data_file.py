@@ -82,6 +82,9 @@ class data_file:
         @brief   Decode soil moisure data.
         @param   raw_data Object which contains data received from UART.
         @return  Measured value of soil moisure.
+        @details SM[%] = 100 - 1.8*(SM[-] - 180)
+                 The constants were determined by measurement 
+                 and linearly interpolated.
         """ 
         if (len(raw_data)>0):
             return round(100-(raw_data[-1]-180)*1.8)
@@ -92,6 +95,9 @@ class data_file:
         @brief   Decode illumination data.
         @param   raw_data Object which contains data received from UART.
         @return  Measured value of illumination.
+        @details E[lx] = 4*(E[-] - 4) + 10
+                 The constants were determined by measurement 
+                 and linearly interpolated.
         """  
         if (len(raw_data)>1):
             return ((raw_data[-2]-4) * 4) + 10
@@ -105,7 +111,6 @@ class data_file:
         """  
         if (len(raw_data)>3):
             return raw_data[-4]+raw_data[-3]*0.1
-            # (raw_data[-4]>>4)*10+(raw_data[-4]&15)+raw_data[-3]*0.1
 
 
     def get_hum(self,raw_data):
@@ -116,7 +121,6 @@ class data_file:
         """
         if (len(raw_data)>5):
             return raw_data[-6]+raw_data[-5]*0.1 
-            # (raw_data[-6]>>4)*10+(raw_data[-6]&15)+raw_data[-5]*0.1
       
 
     def get_sec(self,raw_data):
