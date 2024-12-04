@@ -10,7 +10,7 @@
 
 /**
  * @file 
- * @defgroup PWM libary <pwm.h>
+ * @defgroup PWM library <pwm.h>
  * @code #include <pwm.h> @endcode
  *
  * @brief PWM library for AVR-GCC.
