@@ -9,32 +9,27 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_win class graph_GUI
- # @code import graph_GUI @endcode
- #
- # @brief Class creates a window for displaying data from the database. 
- #        The window contains a graph, a menu for selecting a quantity, 
- #        a drop-down menu for selecting a time period, and two buttons.
- # 
- # @details The window contains two buttons: Apply and Close. Pressing 
- #          the Close button closes the window. Pressing the Apply 
- #          button displays the progress taken for the selected period.
- #
- #          The variables can be selected from temperature, humidity, 
- #          soil moisture or illumination. From the time periods, you 
- #          can select the last minute, hour, day, week, month, year 
- #          or all dates.
- # 
- # @warning Chronological arrangement of data in the database is required.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_win GUI classes
+# @code import graph_GUI @endcode
+#
+# @brief The class graph_GUI creates a window for displaying data from the database. 
+#        The window contains a graph, a menu for selecting a quantity, 
+#        a drop-down menu for selecting a time period, and two buttons.
+# 
+# @details The window contains two buttons: Apply and Close. Pressing 
+#          the Close button closes the window. Pressing the Apply 
+#          button displays the progress taken for the selected period.
+#
+#          The variables can be selected from temperature, humidity, 
+#          soil moisture or illumination. From the time periods, you 
+#          can select the last minute, hour, day, week, month, year 
+#          or all dates.
+# 
+# @warning Chronological arrangement of data in the database is required.
+#
+# @{
 
 # Imports
 import customtkinter as ckt        # Custom Tkinter is used to create GUI.
@@ -48,36 +43,39 @@ from graph_func import *           # Packet with help function for
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class graph_GUI(ckt.CTk):
-    """
-# @brief   Creates a window to display graphical results.
-#          Loads data from a database text file.
-# @param   None
-# @return  None
-    """
+
     def __init__(self):
+        """!
+        @brief   Creates a window to display graphical results.
+                 Loads data from a database text file.
+        @param   None
+        @return  None
+        """
         super().__init__()
         self.create_GUI()
         self.data = database()
 
-    """
-# @brief   Creates GUI widgets. Set size and title 
-#          of the window. Window is not resizable.
-# @param   None
-# @return  None
-    """
+
     def create_GUI(self):
+        """!
+        @brief   Creates GUI widgets. Set size and title 
+                 of the window. Window is not resizable.
+        @param   None
+        @return  None
+        """
         self.title('Graphical results')
         self.geometry("700x400")
         self.resizable(False,False)
         self.create_graph()
 
-    """
-# @brief   Selects and edits data from a database 
-#          for display in a chart.
-# @param   None
-# @return  None
-    """
+
     def draw(self):
+        """!
+        @brief   Selects and edits data from a database 
+                 for display in a chart.
+        @param   None
+        @return  None
+        """
         # Reload data file from database
         self.data.load_data()
         # Filtered data from last minute, hour...
@@ -223,26 +221,26 @@ class graph_GUI(ckt.CTk):
         # The loaded data is displayed in a graph.
         self.update_graph(x_data,y_data)
 
-    """
-# @brief   Creates GUI widgets and axes.
-# @param   None
-# @return  None
-# @details The window contains axes, 
-#          two buttons Draw and Close, selection 
-#          of quantities and setting of the time 
-#          period using the drop-down menu.
-    """
+
     def create_graph(self):
-        """Creates axes in the window and places them in the right part of the window."""
+        """!
+        @brief   Creates GUI widgets and axes.
+        @param   None
+        @return  None
+        @details The window contains axes, 
+                 two buttons Draw and Close, selection 
+                 of quantities and setting of the time 
+                 period using the drop-down menu.
+        """
+
+        """! Creates axes in the window and places them in the right part of the window."""
         self.fig,self.ax = plt.subplots()
         self.canvas = FigureCanvasTkAgg(self.fig, master=self)
         self.canvas.draw()
         self.canvas.get_tk_widget().place(relx=0,rely=0.5,anchor='w')
         
-        """
-        Creates a radio button menu for selecting a variable. It is 
-        possible to select temperature, humidity, soil moisture or illumination.
-        """
+        """! Creates a radio button menu for selecting a variable. It is 
+        possible to select temperature, humidity, soil moisture or illumination."""
         self.radio_var = tk.IntVar(value=1)
         self.radio_temp = ckt.CTkRadioButton(self, text="Temperature",
                                             variable = self.radio_var, value = 1)
@@ -257,20 +255,18 @@ class graph_GUI(ckt.CTk):
                                             variable = self.radio_var, value = 4)
         self.radio_ilu.place(relx=0.8,rely=0.4)
 
-        """ Create Close button. Press to destroy window."""
+        """! Create Close button. Press to destroy window."""
         self.but_close = ckt.CTkButton(self,text="Close",command=self.destroy,width=150,height=40,
                                        font=('Arial',20))
         self.but_close.place(relx=0.76,rely=0.85)
 
-        """ Create Draw button. It has callback function self.draw."""
+        """! Create Draw button. It has callback function self.draw."""
         self.but_draw = ckt.CTkButton(self,text="Draw",command=self.draw,width=150,height=40,
                                       font=('Arial',20))
         self.but_draw.place(relx=0.76,rely=0.7)
 
-        """
-        Creates a drop-down menu for selecting a time period. You can select
-        the last minute, hour, day, week, month, year, or all dates.
-        """
+        """! Creates a drop-down menu for selecting a time period. You can select
+        the last minute, hour, day, week, month, year, or all dates."""
         self.time_scale = ckt.CTkComboBox(master=self,width=150,font=('Arial',20),state='readonly',
                                           values=['Last minute','Last hour','Last day','Last week',
                                                   'Last month','Last year','All'])
@@ -278,16 +274,18 @@ class graph_GUI(ckt.CTk):
         self.time_scale.set("All")
         self.time_scale.place(relx=0.76,rely=0.56,anchor='w') 
 
-    """
-# @brief   Displays new data in the graph.
-# @param   x_data x-coordinates of points
-# @param   y_data y-coordinates of points
-# @return  None
-# @details Deletes previous graph data. 
-#          Displays new data. Changes the 
-#          vertical and horizontal axis labels.
-    """
+
     def update_graph(self,x_data,y_data):
+        """!
+        @brief   Displays new data in the graph.
+        @param   x_data x-coordinates of points
+        @param   y_data y-coordinates of points
+        @return  None
+        @details Deletes previous graph data. 
+                 Displays new data. Changes the 
+                 vertical and horizontal axis labels.
+        """
+
         # Deletes previous graph data.
         self.ax.cla()
         # Displays new data.
@@ -299,16 +297,17 @@ class graph_GUI(ckt.CTk):
         # Displays changes.
         self.canvas.draw() 
 
-    """
-# @brief   It verifies whether the given day 
-#          was or was not during the last week.
-# @param   i (int) The order of the line being read.
-# @return  Was it within the last month.
-# @note    It also checks the situation when 
-#          last week is at the turn of the month 
-#          or even the turn of the year.
-    """
+
     def week_con(self,i):
+        """!
+        @brief   It verifies whether the given day 
+                 was or was not during the last week.
+        @param   i (int) The order of the line being read.
+        @return  Was it within the last month.
+        @note    It also checks the situation when 
+                 last week is at the turn of the month 
+                 or even the turn of the year.
+        """
         # Same month
         a1 = (int(self.data.data[-1]["month"]) == int(self.data.data[i]["month"]))
         a2 = (int(self.data.data[-1]["year"]) == int(self.data.data[i]["year"]))
@@ -330,4 +329,4 @@ class graph_GUI(ckt.CTk):
         # The last condition is if all data is from last week.
         return (a | b | c) & (abs(i) < len(self.data.data))
     
-"""&}"""
+##@}

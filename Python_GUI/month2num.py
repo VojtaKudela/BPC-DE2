@@ -9,31 +9,31 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_time_func func month2num
- # @code import month2num @endcode
- #
- # @brief This function allows you to convert the name of 
- #        the month to its order.
- #
- # @note The function is used in the GUI to set the time 
- #       to get the numeric value from the month drop-down menu.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_month_func Month function
+# @code import month2num @endcode
+#
+# @brief This function allows you to convert the name of 
+#        the month to its order.
+#
+# @note The function is used in the GUI to set the time 
+#       to get the numeric value from the month drop-down menu.
+#
+# @author Antonin Putala, Dept. of Radio Electronics, Brno University 
+#         of Technology, Czechia
+# @copyright (c) 2024 Antonin Putala, This work is licensed under 
+#                the terms of the MIT license
+# @{
 
-"""
-# @brief  This function allows you to convert the name of 
-#         the month to its order. 
-# @param  month English name of the month.
-# @return Order of the month.
-"""
+
 def month2num(month):
+    """!
+    @brief  This function allows you to convert the name of 
+            the month to its order. 
+    @param  month English name of the month.
+    @return Order of the month.
+    """
     match(month):
         case "January":
             return 1
@@ -62,4 +62,4 @@ def month2num(month):
         case _:
             return 13
         
-"""@}"""
+##@}

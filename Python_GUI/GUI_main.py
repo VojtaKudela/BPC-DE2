@@ -9,40 +9,40 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_win class GUI_main
- # @code import GUI_main @endcode
- #
- # @brief The class provides window creation and serial 
- #        communication.
- # 
- # @note    It needs programs to function: # createGUImain,
- #                                         # createGUIset,
- #                                         # createGUIshow,
- #                                         # data_file     
- #                                         # date_func  
- #                                         # database  
- #                                         # graph_func
- #                                         # graphGUI  
- #                                         # GUIcreate  
- #                                         # hum_GUI  
- #                                         # ilu_GUI
- #                                         # month2num
- #                                         # num_and_days  
- #                                         # raw_data 
- #                                         # soil_GUI  
- #                                         # temp_GUI
- #                                         # time_GUI
- #                                         # update_show_settings
- #                                         # update_measure_value_func       
- #      
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_win1 Class main GUI
+# @code import GUI_main @endcode
+#
+# @brief The class provides window creation and serial 
+#        communication.
+# 
+# @note    It needs programs to function: * createGUImain,
+#                                         * createGUIset,
+#                                         * createGUIshow,
+#                                         * data_file     
+#                                         * date_func  
+#                                         * database  
+#                                         * graph_func
+#                                         * graphGUI  
+#                                         * GUIcreate  
+#                                         * hum_GUI  
+#                                         * ilu_GUI
+#                                         * month2num
+#                                         * num_and_days  
+#                                         * raw_data 
+#                                         * soil_GUI  
+#                                         * temp_GUI
+#                                         * time_GUI
+#                                         * update_show_settings
+#                                         * update_measure_value_func       
+#      
+# @author Antonin Putala, Dept. of Radio Electronics, Brno University 
+#         of Technology, Czechia
+# @copyright (c) 2024 Antonin Putala, This work is licensed under 
+#                the terms of the MIT license
+# @{
+
 
 # Imports
 import customtkinter as ckt             # Custom Tkinter is used to create GUI.
@@ -71,17 +71,18 @@ from data_file import data_file         # It processes data from the serial port
 from update_show_settings import *      # Displays the set regulation values.
 
 class App(ckt.CTk):
-    """
-# @brief   Launches a window.
-# @param   nserial    Selected serial port.
-# @param   nbaud_rate Selected baud rate of serial communication.
-# @return  None
-# @details Creates individual GUI widgets. Creates directories 
-#          with default data. Saves information about the serial port
-#          and baud rate. Creates a directory for serial communication. 
-#          Creates a data space for storing received data and a database.
-    """
+
     def __init__(self, nserial_port = "COM3", nbaud_rate=9600):
+        """!
+        @brief   Launches a window.
+        @param   nserial    Selected serial port.
+        @param   nbaud_rate Selected baud rate of serial communication.
+        @return  None
+        @details Creates individual GUI widgets. Creates directories 
+                 with default data. Saves information about the serial port
+                 and baud rate. Creates a directory for serial communication. 
+                 Creates a data space for storing received data and a database.
+        """
         super().__init__()
         # Create GUI widgets.
         createGUI(self)
@@ -99,84 +100,91 @@ class App(ckt.CTk):
         self.data = data_file(raw)
         self.data.create_database()
 
-    """
-# @brief   The method creates a window 
-#          for setting the temperature.
-# @param   None
-# @return  None
-    """
+
     def GUI_set_temp(self):
+        """!
+        @brief   The method creates a window 
+                 for setting the temperature.
+        @param   None
+        @return  None
+        """
         self.temp_win = temp_GUI(self)
         self.temp_win.mainloop()
 
-    """
-# @brief   The method creates a window 
-#          for setting the humidity.
-# @param   None
-# @return  None
-    """
+
     def GUI_set_hum(self):
+        """!
+        @brief   The method creates a window 
+                 for setting the humidity.
+        @param   None
+        @return  None
+        """
         self.hum_win = hum_GUI(self)
         self.hum_win.mainloop()
 
-    """
-# @brief   The method creates a window 
-#          for setting the soil moisure.
-# @param   None
-# @return  None
-    """
+
     def GUI_set_soil(self):
+        """!
+        @brief   The method creates a window 
+                 for setting the soil moisure.
+        @param   None
+        @return  None
+        """
         self.soil_win = soil_GUI(self)
         self.soil_win.mainloop()
 
-    """
-# @brief   The method creates a window 
-#          for setting the illumination.
-# @param   None
-# @return  None
-    """    
+   
     def GUI_set_ilu(self):
+        """!
+        @brief   The method creates a window 
+                 for setting the illumination.
+        @param   None
+        @return  None
+        """ 
         self.ilu_win = ilu_GUI(self)
         self.ilu_win.mainloop()
 
-    """
-# @brief   The method creates a window 
-#          for setting the time.
-# @param   None
-# @return  None
-    """
+
     def GUI_set_time(self):
+        """!
+        @brief   The method creates a window 
+                 for setting the time.
+        @param   None
+        @return  None
+        """
         self.time_win = time_GUI(self)
         self.time_win.mainloop()
 
-    """
-# @brief   The method creates a window 
-#          for showing the graphical results.
-# @param   None
-# @return  None
-    """
+
     def GUI_graph_res(self):
+        """!
+        @brief   The method creates a window 
+                 for showing the graphical results.
+        @param   None
+        @return  None
+        """
         self.graph_win = graph_GUI()
         self.graph_win.mainloop()
 
-    """
-# @brief   Callback function when the Connect button 
-#          is pressed.
-# @param   None
-# @return  None
-# @details The first press starts the communication. 
-#          If successful, the button changes color 
-#          to green and the text to RUN. 
-#          Otherwise, it turns red.
-#
-#          A second press enables communication.
-#          The button will change its text to Stop 
-#          and its color to red.
-#
-#          A third press stops communication. 
-#          The gray Connect button appears again.
-    """
+
     def GUI_connect(self):
+        """!
+        @brief   Callback function when the Connect button 
+                 is pressed.
+        @param   None
+        @return  None
+        @details The first press starts the communication. 
+                 If successful, the button changes color 
+                 to green and the text to RUN. 
+                 Otherwise, it turns red.
+
+                 A second press enables communication.
+                 The button will change its text to Stop 
+                 and its color to red.
+
+                 A third press stops communication. 
+                 The gray Connect button appears again.
+            """
         # Communication is not started.
         if (self.phase == 0):
             # Try start communication.
@@ -201,13 +209,14 @@ class App(ckt.CTk):
             self.connect_but.configure(fg_color=self.color['gray'],text="Connect")
             self.phase = 0     # Now communication is stopped.
 
-    """
-# @brief   The function is started after entering the regulated values. 
-#          The regulated values are displayed, saved in a data package and sent.
-# @param   None
-# @return  None
-    """
+
     def update_settings(self):
+        """!
+        @brief   The function is started after entering the regulated values. 
+                 The regulated values are displayed, saved in a data package and sent.
+        @param   None
+        @return  None
+        """
         # Showing regulated data.
         update_show_settings(self)
         # Filling the data package.
@@ -215,12 +224,13 @@ class App(ckt.CTk):
         # Sending a data package.
         self.send_reg_packet()
 
-    """
-# @brief   The function displays the measured values in the main window.
-# @param   None
-# @return  None
-    """
+
     def update_measure_value(self):
+        """!
+        @brief   The function displays the measured values in the main window.
+        @param   None
+        @return  None
+        """
         # Showing temperature value.
         update_temp(self)
         # Showing humidity value.
@@ -230,12 +240,13 @@ class App(ckt.CTk):
         # Showing illumination value.
         update_ilu(self)
 
-    """
-# @brief   Display of default data after startup.
-# @param   None
-# @return  None
-    """
+
     def default_data(self):
+        """!
+        @brief   Display of default data after startup.
+        @param   None
+        @return  None
+        """
         # Creating directories with default values.
         default_data(self)
         # Display of default values ​​of set regulated quantities.
@@ -243,38 +254,42 @@ class App(ckt.CTk):
         # Display of default measured quantity values.
         self.update_measure_value()
 
-    """
-# @brief   If communication is running, it sends a packet with the time values.
-# @param   None
-# @return  None
-    """
+
     def send_time_packet(self):
+        """!
+        @brief   If communication is running, it sends a packet with the time values.
+        @param   None
+        @return  None
+        """
         if (self.phase == 2):
             self.send_message(self.time_packet)
 
-    """
-# @brief   If communication is running, it sends a packet with the regulation values.
-# @param   None
-# @return  None
-    """
+
     def send_reg_packet(self):
+        """!
+        @brief   If communication is running, it sends a packet with the regulation values.
+        @param   None
+        @return  None
+        """
         if (self.phase == 2):
             self.send_message(self.reg_packet)
 
-    """
-# @brief   Prepares a data package with regulations for sending.
-# @param   None
-# @return  None
-    """
-    def create_reg_packet(self):         
+
+    def create_reg_packet(self): 
+        """!
+        @brief   Prepares a data package with regulations for sending.
+        @param   None
+        @return  None
+        """        
         full_reg_data(self)
 
-    """
-# @brief   Starts serial communication.
-# @param   None
-# @return  None
-    """
+
     def start_serial(self):
+        """!
+        @brief   Starts serial communication.
+        @param   None
+        @return  None
+        """
         try:
             # It attempts to establish serial communication.
             self.serial_connection = serial.Serial(self.serial_port,self.baud_rate,timeout=1)
@@ -288,13 +303,14 @@ class App(ckt.CTk):
             # Serial communication was successfully started.
             return 0
 
-    """
-# @brief   Functions running on a separate thread. 
-#          Reading, displaying and saving received data.
-# @param   None
-# @return  None
-    """
+
     def read_from_serial(self):
+        """!
+        @brief   Functions running on a separate thread. 
+                 Reading, displaying and saving received data.
+        @param   None
+        @return  None
+        """
         # The thread ends when communication is stopped.
         while self.running:
             # Communication exists, it doesn't wait and it runs.
@@ -322,24 +338,26 @@ class App(ckt.CTk):
                     self.data.save_data()
             time.sleep(0.1)
 
-    """
-# @brief   The function ends serial communication.
-# @param   None
-# @return  None
-    """
+
     def stop_serial(self):
+        """!
+        @brief   The function ends serial communication.
+        @param   None
+        @return  None
+        """
         # The thread is stopped.
         self.running = False
         # If any communication existed and was ongoing, it is ended.
         if self.serial_connection and self.serial_connection.is_open:
             self.serial_connection.close()
 
-    """
-# @brief   Sends a message via the serial port.
-# @param   message Sent message.
-# @return  None
-    """    
+   
     def send_message(self,message):
+        """!
+        @brief   Sends a message via the serial port.
+        @param   message Sent message.
+        @return  None
+        """ 
         # Communication exists and runs.
         if self.serial_connection and self.serial_connection.is_open:
             # Message must exist.
@@ -354,4 +372,4 @@ class App(ckt.CTk):
         #else:
             #return
             
-"""@}"""
+##@}

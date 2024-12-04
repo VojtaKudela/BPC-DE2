@@ -10,61 +10,58 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_win class ilu_GUI
- # @code import ilu_GUI @endcode
- #
- # @brief The class creates a pop-up window that allows 
- #        you to set the illumination value that will be 
- #        regulated in the system.
- # 
- # @details The pop-up window contains a line in which you can 
- #          enter the desired illumination value. It also contains 
- #          the Apply and Close buttons. When you press Close, 
- #          the window closes. 
- #          When you press Apply, the text field is read. If 
- #          the line contains a numerical value between the 
- #          minimum and maximum lighting values, the set value 
- #          is overwritten and the window closes. Otherwise, 
- #          the window does not close and the line content 
- #          is deleted.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_win GUI classes
+# @code import ilu_GUI @endcode
+#
+# @brief The class ilu_GUI creates a pop-up window that allows 
+#        you to set the illumination value that will be 
+#        regulated in the system.
+# 
+# @details The pop-up window contains a line in which you can 
+#          enter the desired illumination value. It also contains 
+#          the Apply and Close buttons. When you press Close, 
+#          the window closes. 
+#          When you press Apply, the text field is read. If 
+#          the line contains a numerical value between the 
+#          minimum and maximum lighting values, the set value 
+#          is overwritten and the window closes. Otherwise, 
+#          the window does not close and the line content 
+#          is deleted.
+#
+# @{
 
 # Imports
 import customtkinter as ckt # Custom Tkinter is used to create GUI.
 
 
 class ilu_GUI(ckt.CTk):
-    """
-# @brief   Create window with two buttons
-#          and one entry field.
-# @param   nmaster Window with main GUI.
-# @return  None
-    """
+
     def __init__(self,nmaster):
+        """!
+        @brief   Create window with two buttons
+                 and one entry field.
+        @param   nmaster Window with main GUI.
+        @return  None
+        """
         super().__init__()
         self.master = nmaster
         self.createGUI()
 
-    """
-# @brief   Sets the specified illumination value.
-# @param   None
-# @return  None
-# @details If the specified value is an int value and lies between 
-#          ilu_min and ilu_max, the value will be set 
-#          in the self.master.setting['ilu_val'] directory. The main window 
-#          update is started. The allowed value is displayed in the main window.
-# @note    If communication is running, this value will be written to 
-#          the embedded device.
-    """
+
     def apply(self):
+        """!
+        @brief   Sets the specified illumination value.
+        @param   None
+        @return  None
+        @details If the specified value is an int value and lies between 
+                 ilu_min and ilu_max, the value will be set 
+                 in the self.master.setting['ilu_val'] directory. The main window 
+                 update is started. The allowed value is displayed in the main window.
+        @note    If communication is running, this value will be written to 
+                 the embedded device.
+    """
         try:
             temp = int(self.entry.get())    
         except:
@@ -79,33 +76,34 @@ class ilu_GUI(ckt.CTk):
                 # Close illumination window.
                 self.destroy()
 
-    """
-# @brief   Create GUI for illumination settings.
-#          Set size and title of the window.
-#          Window is not resizable.
-# @param   None
-# @return  None
-    """
+
     def createGUI(self):
+        """!
+        @brief   Create GUI for illumination settings.
+                 Set size and title of the window.
+                 Window is not resizable.
+        @param   None
+        @return  None
+        """
         self.title('Illumination settings')
         self.geometry("300x100")
         self.resizable(False,False)
 
-        """Create inscription Illumination in the window."""
+        """! Create inscription Illumination in the window."""
         self.txtfield = ckt.CTkLabel(master=self,text='Illumination (lx):',width=20,font=('Arial',20))
         self.txtfield.place(relx=0.1,rely=0.25,anchor='w')
 
-        """ Create Apply button. It has callback function self.apply."""
+        """! Create Apply button. It has callback function self.apply."""
         self.but01 = ckt.CTkButton(master=self,text='Apply',width=80,command=self.apply,font=('Arial',20))
         self.but01.place(relx=0.40,rely=0.5)
 
-        """ Create Close button. Press to destroy window."""
+        """! Create Close button. Press to destroy window."""
         self.but02 = ckt.CTkButton(master=self,text='Close',width=80,command=self.destroy,font=('Arial',20))
         self.but02.place(relx=0.7,rely=0.5)
 
-        """Create entry field in the window. Required illumination value can be written here."""
+        """! Create entry field in the window. Required illumination value can be written here."""
         self.entry=ckt.CTkEntry(master=self,placeholder_text=str(self.master.setting['ilu_val']),width=70,
                                 font=('Arial',20))
         self.entry.place(relx=0.72,rely=0.25,anchor='w')
 
-"""@}"""
+##@}

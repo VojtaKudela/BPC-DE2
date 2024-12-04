@@ -9,41 +9,38 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_data class database
- # @code import database @endcode
- #
- # @brief This class ensures data is loaded from the database.
- #        Data storage in database are loaded and saved in list of 
- #        dictionary.
- #
- # @details One dictionary corresponds to one row. Each element 
- #          carries information about time, temperature, humidity, 
- #          soil moisture, or lighting.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_data Data classes
+# @code import database @endcode
+#
+# @brief The class database ensures data is loaded from the database.
+#        Data storage in database are loaded and saved in list of 
+#        dictionary.
+#
+# @details One dictionary corresponds to one row. Each element 
+#          carries information about time, temperature, humidity, 
+#          soil moisture, or lighting.
+#
+# @{
 
 class database:
-    """
- # @brief   Create empty list for saving data.
- # @param   None
- # @return  None
-    """
+
     def __init__(self):
+        """!
+        @brief   Create empty list for saving data.
+        @param   None
+        @return  None
+        """
         self.data = []
 
-    """
- # @brief   It ensures that data is read from a text file.
- # @param   None
- # @return  None
-    """
+
     def load_data(self):
+        """!
+        @brief   It ensures that data is read from a text file.
+        @param   None
+        @return  None
+        """
         # Data has to be cleared. Otherwise there would be duplication.
         self.data = []
         # Open database.
@@ -64,4 +61,4 @@ class database:
         # Close database.
         f.close()
 
-"""@}"""
+##@}

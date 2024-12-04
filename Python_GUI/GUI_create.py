@@ -9,35 +9,36 @@
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_createGUI func GUI_create
- # @code import GUI_create @endcode
- #
- # @brief This function creates the application's GUI. It calls 
- #        the functions createGUImain, createGUIset, and createGUIshow, 
- #        which create the individual sections of the window.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_createGUI Function for creating GUI
+# @code import GUI_create @endcode
+#
+# @brief This function GUI_create creates the application's GUI. It calls 
+#        the functions createGUImain, createGUIset, and createGUIshow, 
+#        which create the individual sections of the window.
+#
+# @author Antonin Putala, Dept. of Radio Electronics, Brno University 
+#         of Technology, Czechia
+# @copyright (c) 2024 Antonin Putala, This work is licensed under 
+#                the terms of the MIT license
+# @{
+
 
 # Imports
 from createGUIshow import createGUIshow # To create indicators.
 from createGUIset import createGUIset   # To create regualtion settings.
 from createGUImain import createGUImain # To create Connect, Set time, Graphical results buttons.
 
-"""
-# @brief   Create main GUI. Set size and
-#          title of the window. Window is not 
-#          resizable. It defines the colors used.
-# @param   None
-# @return  None
-"""
+
 def createGUI(self):
+    """!
+    @brief   Create main GUI. Set size and
+             title of the window. Window is not 
+             resizable. It defines the colors used.
+    @param   None
+    @return  None
+    """
     # Title of window.
     self.title("Tropical plants")
     # Window is not resizable.
@@ -55,7 +56,7 @@ def createGUI(self):
     createGUIset(self)
     createGUImain(self)
 
-"""@}"""
+##@}
 
     
     

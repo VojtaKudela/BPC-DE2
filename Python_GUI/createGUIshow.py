@@ -1,49 +1,41 @@
 """
 #############################################################
- # 
- # Function for creating GUI for showing measured values.
- # (c) 2024 Antonin Putala, MIT license
- #
- # Developed using Visual Studio Code.
- #
+ ## 
+ ## Function for creating GUI for showing measured values.
+ ## (c) 2024 Antonin Putala, MIT license
+ ##
+ ## Developed using Visual Studio Code.
+ ##
 #############################################################
 """
 
-"""
- # @file 
- # @defgroup putala_createGUI func createGUIshow
- # @code import createGUIshow @endcode
- #
- # @brief The function creates a GUI for visual display of measured values 
- #        of temperature, humidity, soil moisture and lighting.
- #
- # @details The function creates a panel at the bottom of the window. 
- #          The window will contain text fields that display the measured 
- #          value of all four monitored values. It also displays the values 
- #          using graphic indicators.
- #
- # @author Antonin Putala, Dept. of Radio Electronics, Brno University 
- #         of Technology, Czechia
- # @copyright (c) 2024 Antonin Putala, This work is licensed under 
- #                the terms of the MIT license
- # @{
-"""
+##
+# @file 
+# @defgroup putala_createGUI Function for creating GUI
+# @code import createGUIshow @endcode
+#
+# @brief The function createGUIshow creates a GUI for visual display of measured values 
+#        of temperature, humidity, soil moisture and lighting.
+#
+# @details The function creates a panel at the bottom of the window. 
+#          The window will contain text fields that display the measured 
+#          value of all four monitored values. It also displays the values 
+#          using graphic indicators.
+#
+# @{
 
 # Imports
 import customtkinter as ckt # Custom Tkinter is used to create GUI.
 
 def createGUIshow(self):
-    """
-It creates a panel in which the text fields and the indicator will be placed. 
-    """
+
+    # It creates a panel in which the text fields and the indicator will be placed.
     self.show_frame = ckt.CTkFrame(master=self,width=1600,height=300,fg_color=self.color['green'])
     self.show_frame.place(relx=0, rely=0.7, anchor="center")
 
-    """
-    This creates a field to display the measured temperature value. It also 
-    creates a thermometer-shaped indicator with a scale described by 
-    the values 15, 30, 45, and 60.
-    """
+    #  This creates a field to display the measured temperature value. It also 
+    # creates a thermometer-shaped indicator with a scale described by 
+    # the values 15, 30, 45, and 60.
     self.txt_temp = ckt.CTkLabel(master=self.show_frame,text="Temperature",font=("Arial",20))
     self.txt_temp.place(relx=0.55, rely=0.12, anchor="center")
 
@@ -70,11 +62,9 @@ It creates a panel in which the text fields and the indicator will be placed.
     self.txt_temp_unit = ckt.CTkLabel(master=self.show_frame,text="°C",font=("Arial",32))
     self.txt_temp_unit.place(relx=0.570, rely=0.23, anchor="center")
 
-    """
-    This creates a field to display the measured humidity value. It also 
-    creates a indicator with a scale described by 
-    the values 0, 33, 67, and 100.
-    """
+    # This creates a field to display the measured humidity value. It also 
+    # creates a indicator with a scale described by 
+    # the values 0, 33, 67, and 100.
     self.txt_hum = ckt.CTkLabel(master=self.show_frame,text="Humidity",font=("Arial",20))
     self.txt_hum.place(relx=0.68, rely=0.12, anchor="center")
 
@@ -101,11 +91,8 @@ It creates a panel in which the text fields and the indicator will be placed.
     self.txt_hum_unit = ckt.CTkLabel(master=self.show_frame,text="%",font=("Arial",32))
     self.txt_hum_unit.place(relx=0.700, rely=0.23, anchor="center")
 
-    """
-    This creates a field to display the measured soil moisure value. 
-    It also creates a indicator with a scale described by 
-    the values 0, 33, 67, and 100.
-    """
+    # This creates a field to display the measured soil moisure value. 
+    # It also creates a indicator with a scale described by the values 0, 33, 67, and 100.
     self.txt_soil = ckt.CTkLabel(master=self.show_frame,text="Soil moisture",font=("Arial",20))
     self.txt_soil.place(relx=0.81, rely=0.12, anchor="center")
 
@@ -132,11 +119,9 @@ It creates a panel in which the text fields and the indicator will be placed.
     self.txt_soil_unit = ckt.CTkLabel(master=self.show_frame,text="%",font=("Arial",32))
     self.txt_soil_unit.place(relx=0.83, rely=0.23, anchor="center")
 
-    """
-    This creates a field to display the measured soil moisure value. 
-    It also creates a indicator with a scale described by 
-    the values 1, 10, 100, and 1000. The scale is logarithmic.
-    """
+    # This creates a field to display the measured soil moisure value. 
+    # It also creates a indicator with a scale described by 
+    # the values 1, 10, 100, and 1000. The scale is logarithmic.
     self.txt_ilu = ckt.CTkLabel(master=self.show_frame,text="Illumination",font=("Arial",20))
     self.txt_ilu.place(relx=0.94, rely=0.12, anchor="center")
 
@@ -163,4 +148,4 @@ It creates a panel in which the text fields and the indicator will be placed.
     self.txt_ilu_unit = ckt.CTkLabel(master=self.show_frame,text="lx",font=("Arial",32))
     self.txt_ilu_unit.place(relx=0.96, rely=0.23, anchor="center")
 
-"""@}"""
+##@}
