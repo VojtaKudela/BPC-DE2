@@ -47,11 +47,8 @@ def update_temp(self):
 
     """!
     Display of the measured value in a text field. 
-    Whole numbers are displayed with the suffix .0.
     """
     temp = str(self.measure_value['temp'])
-    if round(self.measure_value['temp'])==self.measure_value['temp']:
-        temp += ".0"
     self.txt_temp.configure(text= temp + "°C")
 
 
@@ -73,11 +70,8 @@ def update_hum(self):
 
     """!
     Display of the measured value in a text field. 
-    Whole numbers are displayed with the suffix .0.
     """
     temp = str(self.measure_value['hum'])
-    if round(self.measure_value['hum'])==self.measure_value['hum']:
-        temp += ".0"
     self.txt_hum.configure(text= temp + "%")
 
 
@@ -100,10 +94,7 @@ def update_soil(self):
     temp = str(self.measure_value['soil'])
     """!
     Display of the measured value in a text field. 
-    Whole numbers are displayed with the suffix .0.
     """
-    if round(self.measure_value['soil'])==self.measure_value['soil']:
-        temp += ".0"
     self.txt_soil.configure(text= temp + "%" )
 
 
