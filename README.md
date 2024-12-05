@@ -40,7 +40,7 @@
 ### KOMPLEMENTACE
 - [x] 1. komplementace zařízení
 - [x] 2. video
-- [ ] 3. schéma zapojení
+- [x] 3. schéma zapojení
 - [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
 ## Dokumentace
