@@ -1,10 +1,25 @@
 /* 
- * Preper_Data libary
- * (c) Antonin Putala 2024
+ * Tropical plants library
+ * (c) Vit Janos, Jakub Kupcik, Vojtech Kudela, Antonin Putala 2024
  *
  * Developed using PlatformIO and AVR 8-bit Toolchain 3.6.2.
  * Tested on Arduino Uno board and ATmega328P, 16 MHz.
- * Tested by Online C Compiler https://www.online-cpp.com/online_c_compiler
+ * Tested by SimulIDE.
+ */
+
+/**
+ * @mainpage Tropical plants
+ *
+ * Tropical plants is a firmware for the AVR microcontroller. It 
+ * allows you to measure temperature, humidity, soil moisture and 
+ * illumination in the greenhouse in real time. It also allows you 
+ * to regulate these quantities at a set value. It allows communication 
+ * with a PC via a serial port.
+ *
+ * @author    Vit Janos, Jakub Kupcik, Vojtech Kudela, Antonin Putala, 
+ *            Dept. of Radio Electronics, Brno University of Technology, Czechia
+ * @copyright (c) 2024 Vit Janos, Jakub Kupcik, Vojtech Kudela, Antonin Putala, 
+ *            This work is licensed under the terms of the MIT license
  */
 
 // -- Includes -------------------------------------------------------
