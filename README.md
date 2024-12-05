@@ -45,7 +45,7 @@
 
 ## Dokumentace
 1. [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
-2. [AVR - firmware](Documentation/AVR-C/html/index.html)
+2. [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html))
 
 ## Video
 
