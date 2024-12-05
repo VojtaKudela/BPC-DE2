@@ -1,31 +1,48 @@
+/* 
+ * Preper_Data libary
+ * (c) Antonin Putala 2024
+ *
+ * Developed using PlatformIO and AVR 8-bit Toolchain 3.6.2.
+ * Tested on Arduino Uno board and ATmega328P, 16 MHz.
+ * Tested by Online C Compiler https://www.online-cpp.com/online_c_compiler
+ */
 
-// Includes
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <uart.h>
-#include <timer.h>
-#include <util/twi.h>
-#include <twi.h>
-#include <adc.h>
-#include <heater.h>
-#include <soil.h>
-#include <pwm.h>
-#include <preper_data.h>
+// -- Includes -------------------------------------------------------
+#include <avr/io.h>            // Contains pin and register names.
+#include <avr/interrupt.h>     // Contains interrupt functions.
+#include <uart.h>              // UART handling library by Peter Fleury.
+#include <timer.h>             // Timer library for AVR-GCC
+#include <util/twi.h>          
+#include <twi.h>               // I2C/TWI library for AVR-GCC
+#include <adc.h>               // ADC library for AVR-GCC
+#include <heater.h>            // Heater, fan and inhalator handling library
+#include <soil.h>              // Valve handling library
+#include <pwm.h>               // PWM library for AVR-GCC
+#include <preper_data.h>       // Auxiliary function for the Tropical Plants project
+#include <tropical_def.h>      // Contain necessary defines and function declarations
 
-// Contain necessary defines and function declarations
-#include <tropical_def.h>
 
-// Defines for regulation
+
+// -- Defines -------------------------------------------------------
+// Regulation pins
 #define HEAT PB0
 #define COOL PB1
 #define INHA PB2
 #define VALV PB3
+
+// Regulation port
 #define REG_PORT &PORTB
 
-// Global variables
+// -- Global variables  ----------------------------------------------
 volatile uint8_t update_data = 0;
 
-// Startup
+// -- Function definitions -------------------------------------------
+/*
+ * Function: startup
+ * Purpose:  Initialization of peripherals.
+ * Input(s): None
+ * Returns:  None
+ */
 void startup(void)
 {
     // Last transmitted symbol
@@ -44,7 +61,7 @@ void startup(void)
     PWM_enable();
     PWM_set_duty(0);
 
-    // Default data
+    // Default data of the regulatory repository
     rg.temp_val = 20;
     rg.temp_hys = 2;
     rg.hum_val = 50;
@@ -62,18 +79,30 @@ void startup(void)
     TIM2_ovf_16ms();
     TIM2_ovf_enable();
 
+    // ADC initialization
     ADC_setup();
 
+    // Global interrupt enable
     sei();
 }
 
+/*
+ * Function: write_rtc_data
+ * Purpose:  Sets the real-time clock value.
+ * Input(s): None
+ * Returns:  None
+ */
 void write_rtc_data(void)
 {
     twi_start();
 
-    if (twi_write((RTC_ADR<<1) | TWI_WRITE) == 0) // RTC I2C address
+    // RTC I2C address
+    if (twi_write((RTC_ADR<<1) | TWI_WRITE) == 0) 
     {   
-        twi_write(RTC_SEC_MEM);         // Register to start reading
+        // Register to start writing
+        twi_write(RTC_SEC_MEM); 
+
+        // Writing data to memory        
         twi_write(rc.second); 
         twi_write(rc.minute); 
         twi_write(rc.hour); 
@@ -86,16 +115,28 @@ void write_rtc_data(void)
     twi_stop();
 }
 
+/*
+ * Function: read_rtc_data
+ * Purpose:  Reads data from the real-time clock.
+ * Input(s): None
+ * Returns:  None
+ */
 void read_rtc_data(void)
 {
     twi_start();
+
+    // RTC I2C address
     if (twi_write((RTC_ADR<<1) | TWI_WRITE) == 0) 
     {
+        // Register to start reading
         twi_write(RTC_SEC_MEM);
         twi_stop();
 
+        // Repeated start
         twi_start();
         twi_write((RTC_ADR<<1) | TWI_READ);
+
+        // Reading data from memory   
         dp.second = twi_read(TWI_ACK);
         dp.minute = twi_read(TWI_ACK);
         dp.hour = twi_read(TWI_ACK);
@@ -104,29 +145,38 @@ void read_rtc_data(void)
         dp.month = twi_read(TWI_ACK);
         dp.year = twi_read(TWI_NACK);
     }
+
     twi_stop();
 }
 
-// DHT Sensor Functions
+/*
+ * Function: read_dht_data
+ * Purpose:  Reads data from the combined humidity and temperature sensor.
+ * Input(s): None
+ * Returns:  None
+ */
 void read_dht_data(void)
 {
+    // Temporary storage of the read values
     uint8_t hum_raw[2], temp_raw[2];
     uint8_t cumsum;
     
     twi_start();
 
+    // DTH I2C address
     if (twi_write((DHT_ADR<<1) | TWI_WRITE) == 0) // Start communication with DHT
     {
         twi_write(DHT_HUM_MEM);                   // Point to humidity register
         twi_stop();
 
+        // Repeated start
         twi_start();
-        twi_write((DHT_ADR << 1) | TWI_READ);    // Read operation
-        hum_raw[0] = twi_read(TWI_ACK);          // Read high byte of humidity
-        hum_raw[1] = twi_read(TWI_ACK);          // Read low byte of humidity
-        temp_raw[0] = twi_read(TWI_ACK);         // Read high byte of temperature
-        temp_raw[1] = twi_read(TWI_ACK);         // Read low byte of temperature
-        cumsum      = twi_read(TWI_NACK);        // Read cumsum
+        twi_write((DHT_ADR << 1) | TWI_READ);     // Read operation
+        hum_raw[0] = twi_read(TWI_ACK);           // Read high byte of humidity
+        hum_raw[1] = twi_read(TWI_ACK);           // Read low byte of humidity
+        temp_raw[0] = twi_read(TWI_ACK);          // Read high byte of temperature
+        temp_raw[1] = twi_read(TWI_ACK);          // Read low byte of temperature
+        cumsum      = twi_read(TWI_NACK);         // Read cumsum
         
         // Are received data correct?
         if ((hum_raw[1] + temp_raw[1] + hum_raw[0] + temp_raw[0]) == cumsum)                                    
@@ -142,9 +192,15 @@ void read_dht_data(void)
 
 }
 
+/*
+ * Function: transmit_uart_data
+ * Purpose:  Sends measured values ​​via UART.
+ * Input(s): None
+ * Returns:  None
+ */
 void transmit_uart_data(void)
 {
-    // Local variables
+    // Local variables, modified values ​​for sending
     uint8_t lux_rec;
     uint8_t soil_rec;
 
@@ -175,37 +231,49 @@ void transmit_uart_data(void)
 // Main loop
 int main(void)
 {
-    uint16_t ilu_set;
+    uint16_t ilu_set;    // The lighting control level will be stored here.
+    uint8_t  new_data;   // Carry information about type of new data 0 - none, 1 - reg, 2 - time
+    uint8_t  data_count; // Number of receive bytes
+    uint16_t uart_data;  // Receive uart_byte
 
-    uint8_t new_data;   // Carry information about type of new data 0 - none, 1 - reg, 2 - time
-    uint8_t data_count; // Number of receive bytes
-    uint16_t uart_data; // Receive uart_byte
-
+    // Initialization
     startup();
 
+    // Forever loop
     while (1)
     {
+        // Obtaining data from serial communication.
         uart_data = uart_getc();
 
         if ((uart_data>>8)==0)
         {
+            // Only the lower byte contains data.
             uart_data = (uart_data&0x00ff);
 
             // First letter carry information about type of data
             if (new_data == 0)
             {
+
+                // The data packet with the time setting starts with the ASCII character T.
                 if (uart_data == 'T')
                 {
+                    // Ready to receive time data packet.
                     new_data = 2;
                     data_count++;
                 }
+
+                // The data packet with the regulation setting starts with the ASCII character R.
                 else if (uart_data == 'R')
                 {
+                    
+                    // Ready to receive regulation data packet.
                     new_data = 1;
                     data_count++;
                 }
             }
-            // Receive regulation data
+
+            // Receive regulation data.
+            // Data on the serial line has a strict order.
             else if (new_data == 1)
             {
                 switch (data_count)
@@ -235,11 +303,14 @@ int main(void)
                             rg.ilu_1 = uart_data;
                             break;
                     }
-                    
+                
+                // Ready to process another byte.
                 data_count++;
                 
             }
-             // Receive time data
+
+            // Receive time data.
+            // Data on the serial line has a strict order.
             else if (new_data == 2)
             {
                     switch (data_count)
@@ -266,24 +337,28 @@ int main(void)
                             rc.second = uart_data;
                             break;
                     }
+
+                // Ready to process another byte.
                 data_count++;
             }
-             
+            
+            // Apply regulation value
             if ((new_data == 1) & (data_count > 8))
             {
-                data_count = 0;
-                new_data = 0;
+                data_count = 0;   // Ready for the next reception.
+                new_data = 0;     // Nothing is received.
 
             }
             // Apply time value
             else if ((new_data == 2) & (data_count > 7))
             {
-                data_count = 0;
-                new_data = 0;
+                data_count = 0;    // Ready for the next reception.
+                new_data = 0;      // Nothing is received.
                 write_rtc_data();  // Data are send via I2C
             }
         }
 
+        // After TIMER1 overflows.
         if (update_data == 1)
         {
             // Read RTC and DHT data
@@ -306,14 +381,18 @@ int main(void)
         }
     }
 
+    // It will never happen.
     return 0;
 }
 
+// Handling timer 1 interrupt triggers the update.
 ISR(TIMER1_OVF_vect)
 {
     update_data = 1;
 }
 
+// The timer 2 interrupt handler switches the ADC input 
+// every fourth cycle and starts the conversion.
 ISR(TIMER2_OVF_vect)
 {
     static uint8_t counter = 0;
@@ -327,6 +406,8 @@ ISR(TIMER2_OVF_vect)
     }
 }
 
+// According to the multiplexer settings, the ADC saves
+// the read value to the appropriate directory.
 ISR(ADC_vect)
 {
     if (ADMUX & (1 << MUX0)) 
@@ -335,6 +416,6 @@ ISR(ADC_vect)
     } 
         else 
     {
-        dp.lux = ADC; // Connect to A2
+        dp.lux = ADC;  // Connect to A2
     }
 }
