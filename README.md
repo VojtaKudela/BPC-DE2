@@ -4,7 +4,7 @@
 1. Vít Janoš (zodpovědný za PWM)
 2. Vojtěch Kudela (zodpovědný za správu GitHub a knihoven)
 3. Jakub Kupčík (zodpovědný za získání dat)
-4. Antonín Putala (zodpovědný za HMI a UART)
+4. Antonín Putala (zodpovědný za GUI a UART)
 
 ## ÚKOLY
 > [!WARNING]
@@ -31,7 +31,7 @@
 - [x] 3. knihovna pro cumsum - musí zjišťovat, zda se hodnoty rovnají -> v opačném případě se provede úkon 
 - [x] 4. implementace regulace osvětlení
 
-### HMI ROZHRANÍ + UART
+### GUI ROZHRANÍ + UART
 - [x] 1. zajištění komunikace přes UART
 - [x] 2. vytahat data + zobrazit budíky
 - [x] 3. databáze
