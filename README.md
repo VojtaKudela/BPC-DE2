@@ -6,16 +6,35 @@
 3. Jakub Kupčík (zodpovědný za získání dat)
 4. Antonín Putala (zodpovědný za GUI a UART)
 
-## ÚKOLY
-> [!WARNING]
-> 1. adc-zvládnot číst data z obou portů
-> 2. PWM řízení intenzity osvětlení
-> 4. úprava knihoven
->    - teplota, vlhkost, _**cumsum**_ 
->    - získat veškerá data z RTC
-> 6. regulátor teploty
-> 7. regulátor vlhkosti
-> 8. činnost větráku
+## Teoretický popis a vysvětlení
+
+
+## Hardwarový popis
+
+
+### Náhled na zařízení
+![Pohled na zařízení](https://github.com/VojtaKudela/BPC-DE1-topic_4/blob/main/Picture/1713725654572.jpg).
+
+
+## Sofwarový popis
+
+
+## Simulace komponentů 
+
+
+## Instrukční návod
+
+
+### Popis částí
+
+
+### Popis ovládacích prvků
+
+
+### Nastavení 
+
+### Video ukázka
+Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde](https://youtu.be/y9z3xt5LS8A).
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
@@ -46,6 +65,7 @@
 ## Dokumentace
 1. [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
 2. [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+3. Podrobnější informace k projektu naleznete v [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
 
 ## Video
 
