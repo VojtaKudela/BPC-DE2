@@ -15,7 +15,7 @@
 ### Náhled na zařízení
 ![Pohled na zařízení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_180939.jpg)
 
-### Náhled na zařízení s uživatelským rozhraním
+### Náhled na zařízení s uživatelským rozhraním v pozadí
 ![Pohled na zařízení s uživatelským rozhraním](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_181146_1.jpg)
 
 ## Sofwarový popis
@@ -36,7 +36,7 @@
 ### Nastavení 
 
 ### Video ukázka
-Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde](https://youtu.be/y9z3xt5LS8A).
+Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde]().
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
@@ -66,10 +66,9 @@ Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikn�
 
 ## Dokumentace
 - [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
--  [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+- [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
 - [Dokumentace k projektu](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
 
-## Video
 
 ## Použité nástroje
 1. [VS Code](https://code.visualstudio.com/)
@@ -83,6 +82,7 @@ Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikn�
 8. [Doxygen](https://doxygen.nl/index.html)
 9. [Matlab](https://www.mathworks.com/products/matlab.html)
 10. [ProfiCAD - Elektro CAD Software - ProfiCAD](https://www.proficad.cz/)
+
 
 ## Reference
 1. [Climate Chamber System](https://projecthub.arduino.cc/ms_peach/climate-chamber-system-c545de).
