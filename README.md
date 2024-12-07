@@ -13,10 +13,10 @@
 
 
 ### Náhled na zařízení
-![Pohled na zařízení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_180939.jpg).
+![Pohled na zařízení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_180939.jpg)
 
 ### Náhled na zařízení s uživatelským rozhraním
-![Pohled na zařízení s uživatelským rozhraním](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_181146_1.jpg).
+![Pohled na zařízení s uživatelským rozhraním](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_181146_1.jpg)
 
 ## Sofwarový popis
 
