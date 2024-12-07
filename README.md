@@ -9,7 +9,7 @@
 ## Teoretický popis a vysvětlení
 V době prudkého nárůstu světové populace jsou hledány způsoby, jak zvýšit světovou produkci potravin. Jednou z možností, která se nabízí je pěstování ve **sklenících**. Velkou výhodou skleníků je, že potravinová produkce v nich není vázána na vegetační cyklus ani na klimatické podmínky. Podmínky uvnitř skleníku je možné udržovat systémem senzorů a akčních členů, které zajistí **optimální klima** pro zde pěstované rostliny.
 
-Jak známo rostliny ke svému životu potřebují [10]:
+Jak známo rostliny ke svému životu potřebují:
 1.	vodu a živiny
 2.	vzduch a půdu
 3.	světlo a teplo
