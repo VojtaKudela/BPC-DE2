@@ -77,7 +77,7 @@ void startup(void)
     PWM_set_duty(0);
 
     // Default data of the regulatory repository
-    rg.temp_val = 20;
+    rg.temp_val = 25;
     rg.temp_hys = 2;
     rg.hum_val = 50;
     rg.hum_hys = 5;
