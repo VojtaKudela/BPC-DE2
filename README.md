@@ -63,9 +63,9 @@ Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikn�
 - [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
 ## Dokumentace
-1. [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
-2. [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
-3. Podrobnější informace k projektu naleznete v [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+- [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
+-  [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+- [Dokumentace k projektu](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
 
 ## Video
 
