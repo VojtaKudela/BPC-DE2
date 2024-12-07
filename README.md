@@ -7,16 +7,41 @@
 4. Antonín Putala (zodpovědný za GUI a UART)
 
 ## Teoretický popis a vysvětlení
+V době prudkého nárůstu světové populace jsou hledány způsoby, jak zvýšit světovou produkci potravin. Jednou z možností, která se nabízí je pěstování ve **sklenících**. Velkou výhodou skleníků je, že potravinová produkce v nich není vázána na vegetační cyklus ani na klimatické podmínky. Podmínky uvnitř skleníku je možné udržovat systémem senzorů a akčních členů, které zajistí **optimální klima** pro zde pěstované rostliny.
+
+Jak známo rostliny ke svému životu potřebují [10]:
+1.	vodu a živiny
+2.	vzduch a půdu
+3.	světlo a teplo
+4.	prostor a čas
+
+Půdu a živiny je nutné zajistit při setí nebo sadbě. Vzduch bude zajištěn přístupem čerstvého vzduchu. Požadavek na prostor je omezující, co se týče rostlin, které jsme schopni na ploše vysadit a čas bohužel regulovat nelze, je tedy nezbytné nechat rostlinu růst do doby, než ponese plody.
+
+Naopak je možné regulovat **teplotu** okolí, **světlo** a vodu, která se projeví jako **půdní vlhkost**. Tento projekt se zaměřuje na pěstování **tropických rostlin**. Je potřeba myslet na to, že tropické rostliny rostou ve velmi vlhkém prostředí, proto je nutné regulovat také **vlhkost vzduchu**.
+
+Pro otestování možností bylo realizováno zařízení schopné, jak **měřit**, tak i **regulovat** zvolené veličiny v skleníku. Tyto veličiny je pochopitelně nutné v čase měnit, aby pokud možno odrážely, denní cykly a co nejlépe odrážely klima, ve kterém rostlina přirozeně roste. Protože jako pěstitel nemáme možnost neustále sledovat vývoj veličin, naměřené **hodnoty veličin** je vhodné **ukládat** pro další zpracování.
 
 
 ## Hardwarový popis
 
+Zařízení představuje prototyp měřicího a řídicího členu pro tropický skleník. Umožňuje měření teploty, osvětlení, půdní vlhkosti a vlhkosti vzduchu. Tyto hodnoty jsou odečítány v reálném čase. Odečítání hodnot veličin zajišťují tyto senzory:
 
-### Náhled na zařízení
+1.	DHT12 – kombinované teplotní a vlhkostní čidlo,
+2.	Kapacitní senzor půdní vlhkosti v1.2 – Arduino,
+3.	Fotorezistor.
+   
+Aby odečítané hodnoty byly v reálném čase, byly použity hodiny reálného času RTC DS3213. 
+Další funkcí je regulace těchto veličin. K tomu slouží výstupní periférie. V tom to případě byl uvažován **topný člen**, **ventilátor**, **nebulizér**, **ventil** pro ovládání hadice, která bude zajišťovat závlahu a LED pásek, který bude představovat **osvětlení**. Regulaci teploty zajišťuje topný člen a ventilátor a regulaci vlhkosti vzduchu zajišťuje nebulizér a ventilátor.Pro otestování funkce byly tyto periferie nahrazeny různobarevný **LED** diodami.
+
+
+### Schéma + foto testovacího zařízení
 ![Pohled na zařízení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_180939.jpg)
 
 ### Náhled na zařízení s uživatelským rozhraním v pozadí
 ![Pohled na zařízení s uživatelským rozhraním](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/IMG_20241204_181146_1.jpg)
+
+### Schéma zapojení
+![Schéma zapojení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/Schema.png)
 
 ## Sofwarový popis
 
