@@ -80,5 +80,8 @@
 15. [DHT12 temperature sensor and Arduino example - Arduino Learning](https://www.arduinolearning.com/code/dht12-temperature-sensor-arduino-example.php)
 16. [Arduino - Home](https://www.arduino.cc/)
 17. [CP2102 datasheet(1/18 Pages) SILABS | SINGLE-CHIP USB TO UART BRIDGE](https://www.alldatasheet.com/html-pdf/201067/SILABS/CP2102/215/1/CP2102.html)
+18. [Peter Fleury Online: AVR Software](http://www.peterfleury.epizy.com/avr-software.html?i=1)
+19. [AVR course – UART · tomas-fryza/avr-course](https://github.com/tomas-fryza/avr-course/tree/master/lab5-uart)
+20. [AVR course – I2C    · tomas-fryza/avr-course](https://github.com/tomas-fryza/avr-course/tree/master/lab6-i2c)
 
 
