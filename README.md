@@ -44,21 +44,17 @@ Další funkcí je regulace těchto veličin. K tomu slouží výstupní perifé
 ![Schéma zapojení](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Picture/Schema.png)
 
 ## Sofwarový popis
+Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, tak pro osobní počítač. Zatímco program pro mikrokontroler byl napsán v jazyce C, program pro osobní počítač byl napsán v Pythonu.
 
 
-## Simulace komponentů 
+### Python
+Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor ![Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci ![GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této ![dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html).
+
+## Instrukční list
 
 
-## Instrukční návod
+### Zobrazení aktuálně naměřené hodnoty
 
-
-### Popis částí
-
-
-### Popis ovládacích prvků
-
-
-### Nastavení 
 
 ### Video ukázka
 Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde]().
