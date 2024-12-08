@@ -78,10 +78,11 @@ Firmware mikrokontroleru využívá několik knihoven. Knihovna [uart](https://g
 ### Zobrazení aktuálně naměřené hodnoty
 Naměřené hodnoty jsou přímo zobrazeny v hlavním panelu. Hlavní panel zobrazuje naměřenou hodnotu teploty, vlhkosti vzduch, půdní vlhkosti a osvětlenosti. U všech veličin je jednak zobrazena číselná hodnota a jednak její hodnota na analogové stupnici.
 Analogové stupnice mají následující rozsah:
--	Teplota 		– 15 až 60 °C
--	Vlhkost vzduchu 	– 0 až 100 %
--	Půdní vlhkost	 	– 0 až 100 %
--	Osvětlení 		– 1 až 1000 lx
+-	Teplota - 15 až 60 °C
+-	Vlhkost vzduchu – 0 až 100 %
+-	Půdní vlhkost – 0 až 100 %
+-	Osvětlení – 1 až 1000 lx
+
 Stupnice osvětlení je logaritmická, ostatní jsou lineární.
 
 
