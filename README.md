@@ -19,18 +19,18 @@ Půdu a živiny je nutné zajistit při setí nebo sadbě. Vzduch bude zajiště
 
 Naopak je možné regulovat **teplotu** okolí, **světlo** a vodu, která se projeví jako **půdní vlhkost**. Tento projekt se zaměřuje na pěstování **tropických rostlin**. Je potřeba myslet na to, že tropické rostliny rostou ve velmi vlhkém prostředí, proto je nutné regulovat také **vlhkost vzduchu**.
 
-Pro otestování možností bylo realizováno zařízení schopné, jak **měřit**, tak i **regulovat** zvolené veličiny v skleníku. Tyto veličiny je pochopitelně nutné v čase měnit, aby pokud možno odrážely, denní cykly a co nejlépe odrážely klima, ve kterém rostlina přirozeně roste. Protože jako pěstitel nemáme možnost neustále sledovat vývoj veličin, naměřené **hodnoty veličin** je vhodné **ukládat** pro další zpracování.
+Pro otestování možností bylo realizováno zařízení schopné, jak **měřit**, tak i **regulovat** zvolené veličiny v skleníku. Tyto veličiny je pochopitelně nutné v čase měnit, aby pokud možno odrážely, denní cykly a co nejlépe odrážely klima, ve kterém rostlina přirozeně roste. Protože jako pěstitel nemáme možnost neustále sledovat vývoj veličin, naměřené **hodnoty veličin** je vhodné **ukládat** pro další zpracování. Aby byla obsluha zařízení uživatelsky přívětivá, bylo zvoleno **ovládání prostřednictvím osobního počítače**, kčemuž slouží grafické uživatelské rozhraní (GUI). 
 
 
 ## Hardwarový popis
 
 Zařízení představuje prototyp měřicího a řídicího členu pro tropický skleník. Umožňuje měření teploty, osvětlení, půdní vlhkosti a vlhkosti vzduchu. Tyto hodnoty jsou odečítány v reálném čase. Odečítání hodnot veličin zajišťují tyto senzory:
 
-1.	DHT12 – kombinované teplotní a vlhkostní čidlo,
-2.	Kapacitní senzor půdní vlhkosti v1.2 – Arduino,
-3.	Fotorezistor.
+1.	[DHT12](https://www.arduinolearning.com/code/dht12-temperature-sensor-arduino-example.php) – kombinované teplotní a vlhkostní čidlo
+2.	[Kapacitní senzor půdní vlhkosti v1.2](https://projecthub.arduino.cc/lucasfernando/soil-moisture-sensor-comple-guide-b9c82b) – Arduino
+3.	fotorezistor
    
-Aby odečítané hodnoty byly v reálném čase, byly použity hodiny reálného času RTC DS3213. 
+Aby odečítané hodnoty byly v reálném čase, byly použity hodiny reálného času RTC [DS3213](https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf). 
 Další funkcí je regulace těchto veličin. K tomu slouží výstupní periférie. V tom to případě byl uvažován **topný člen**, **ventilátor**, **nebulizér**, **ventil** pro ovládání hadice, která bude zajišťovat závlahu a LED pásek, který bude představovat **osvětlení**. Regulaci teploty zajišťuje topný člen a ventilátor a regulaci vlhkosti vzduchu zajišťuje nebulizér a ventilátor.Pro otestování funkce byly tyto periferie nahrazeny různobarevný **LED** diodami.
 
 
