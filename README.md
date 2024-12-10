@@ -2,7 +2,7 @@
 Členové týmu
 
 1. Vít Janoš (zodpovědný za PWM)
-2. Vojtěch Kudela (zodpovědný za správu GitHub a knihoven)
+2. Vojtěch Kudela (zodpovědný za obsluhu a správu GitHub)
 3. Jakub Kupčík (zodpovědný za získání dat)
 4. Antonín Putala (zodpovědný za GUI a UART)
 
@@ -90,31 +90,6 @@ Stupnice osvětlení je logaritmická, ostatní jsou lineární.
 ### Video ukázka
 Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde](https://l.facebook.com/l.php?u=https%3A%2F%2Fvutbr-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2F246858_vutbr_cz%2FEXO8N39nYi9CjGoCtYOYt_YBu9UJ9zcuZxR2HDn7m6k5Xw%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0kTXEcqZt7Lsbg1UoCl0ykdBTkBOt3FukuswAQO3Te59IQwOYOxVHeaSI_aem_F0M8OA4p4Sr2LX9bdFgvGQ&h=AT1zTisApxY7p2FXc7chAo3kfdsrvQq1c_8bjErb-S-DH0EZpSUpumy_P4UQ7MJ7msPugB_uP-vv12Eb6qwxfn0DG8LiicpJ44ga-bMsWyaQF_o4rvcu8xNuwXYGrkICevLfGg).
 
-## Bloky
-### ZÍSKÁNÍ DAT
-- [x] 1. adc-zajistit získání hodnoty z _fotorezistoru_ a _soil čidla_ (knihovna)
-- [x] 2. převést na _**SMYSLUPLNOU HODNOTU**_
-- [x] 3. zajistit získání dat z _teplotního čidla_
-- [x] 4. zajisti _získání dat z RTC_
-- [x] 5. časování odečtu
-   
-### REGULACE VELIČIN
-- [x] 1. PWM-rozjet (např. na 1 LED)
-- [x] 2. knihovny pro relátka - každá **samostatná** knihovna bude obsahovat _**komparaci parametrů**_
-- [x] 3. knihovna pro cumsum - musí zjišťovat, zda se hodnoty rovnají -> v opačném případě se provede úkon 
-- [x] 4. implementace regulace osvětlení
-
-### GUI ROZHRANÍ + UART
-- [x] 1. zajištění komunikace přes UART
-- [x] 2. vytahat data + zobrazit budíky
-- [x] 3. databáze
-- [x] 4. regulace
-
-### KOMPLEMENTACE
-- [x] 1. komplementace zařízení
-- [x] 2. video
-- [x] 3. schéma zapojení
-- [ ] 4. dokumentace - popis algoritmů pomocí vývojových diagramů
 
 ## Dokumentace
 - [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
