@@ -70,7 +70,7 @@ Podrobnější informace naleznete v [dokumentaci](https://github.com/VojtaKudel
 
 
 ## Knihovny
-Firmware mikrokontroleru využívá několik knihoven. Knihovna [uart](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/uart) byla převzata z [19](http://www.peterfleury.epizy.com/avr-software.html?i=2). Použitá verze byla převzata z [20](https://github.com/tomas-fryza/avr-course/tree/master/lab5-uart). Knihovna [twi](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/twi) byla převzata z [21](https://github.com/tomas-fryza/avr-course/tree/master/lab6-i2c). Ani jedna z nich nebyla upravována. Ostatní knihovny byly vytvořeny spolu s projektem.
+Firmware mikrokontroleru využívá několik knihoven. Knihovna [uart](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/uart) byla převzata z [19](http://www.peterfleury.epizy.com/avr-software.html?i=2). Použitá verze byla převzata z [20](https://github.com/tomas-fryza/avr-course/tree/master/lab5-uart). Knihovna [twi](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/twi) byla převzata z [21](https://github.com/tomas-fryza/avr-course/tree/master/lab6-i2c). Ani jedna z nich nebyla upravována. Ostatní knihovny byly vytvořeny spolu s projektem. Ty naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
 
 
 ## Instrukční list
