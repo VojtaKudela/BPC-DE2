@@ -51,7 +51,7 @@ Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, 
 
 
 ### Python
-Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html). Podrobnější informace naleznete v dokumentaci.
+Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html) nebo v této [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
 
 
 ### Náhled na zařízení s řídícím osobním počítačem v pozadí
@@ -88,7 +88,7 @@ Stupnice osvětlení je logaritmická, ostatní jsou lineární.
 
 
 ### Video ukázka
-Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde]().
+Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikněte [zde](https://l.facebook.com/l.php?u=https%3A%2F%2Fvutbr-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2F246858_vutbr_cz%2FEXO8N39nYi9CjGoCtYOYt_YBu9UJ9zcuZxR2HDn7m6k5Xw%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0kTXEcqZt7Lsbg1UoCl0ykdBTkBOt3FukuswAQO3Te59IQwOYOxVHeaSI_aem_F0M8OA4p4Sr2LX9bdFgvGQ&h=AT1zTisApxY7p2FXc7chAo3kfdsrvQq1c_8bjErb-S-DH0EZpSUpumy_P4UQ7MJ7msPugB_uP-vv12Eb6qwxfn0DG8LiicpJ44ga-bMsWyaQF_o4rvcu8xNuwXYGrkICevLfGg).
 
 ## Bloky
 ### ZÍSKÁNÍ DAT
