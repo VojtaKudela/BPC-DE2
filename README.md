@@ -44,7 +44,7 @@ Další funkcí je regulace těchto veličin. K tomu slouží výstupní perifé
 
 ## Periferie
 V rámci projektu bylo uvažováno a použito kombinované teplotní a vlhkostní čidlo, hodiny reálného času, čidlo osvětlení, čidlo půdní vlhkosti, 
-tepelný člen, ventilátor, nebulizér, ventil a LED pásek. Podrobnější popis jednotlivých periferií naleznete v [dokumentaci]().
+tepelný člen, ventilátor, nebulizér, ventil a LED pásek. Podrobnější popis jednotlivých periferií naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
 
 ## Sofwarový popis
 Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, tak pro osobní počítač. Zatímco program pro mikrokontroler byl napsán v jazyce C, program pro osobní počítač byl napsán v Pythonu.
@@ -66,7 +66,7 @@ Veškerá sériová komunikace probíhá na rychlost **9600 Bd**. Je využíván
 Přijatá data ze sériového portu je nutné uložit, zpracovat a uložit do rozhraní, a poté jejich aplikovat aktualizaci, aby se změny projevily v hlavním okně. 
 Třída [raw_data](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/raw_data.py) složí jako úložný prostor pro přijatá data. Jednotlivé byty jsou uloženy v listu. Tato třída je následně zpracována třídou [data_file](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/data_file.py). Zde dochází k převodu dat na smysluplnou zobrazitelnou hodnotu. Tato data jsou ukládána do textového souboru database.txt, který slouží jako úložiště naměřených hodnot pro pozdější zpracování. Pro grafické zpracování je nutné data z textového souboru načíst. To zajišťuje třída [database](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/database.py). 
 Při zpracovávání dat je nutné převádět názvy dnů v týdnu na číselné hodnoty a zpětně, stejně jako názvy měsíců na číselné hodnoty. Převod názvů dnů zajišťuje knihovna [num_and_days](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/num_and_days.py), převod názvů měsíců na číslo funkce [month2num](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/month2num.py).
-Podrobnější informace naleznete v [dokumentaci]().
+Podrobnější informace naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
 
 
 ## Knihovny
