@@ -83,7 +83,7 @@ Analogové stupnice mají následující rozsah:
 -	Půdní vlhkost – 0 až 100 %
 -	Osvětlení – 1 až 1000 lx
 
-Stupnice osvětlení je logaritmická, ostatní jsou lineární.
+Stupnice osvětlení je logaritmická, ostatní jsou lineární. Podrobnější instrukční návod naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
 
 
 
