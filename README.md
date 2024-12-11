@@ -44,14 +44,14 @@ Další funkcí je regulace těchto veličin. K tomu slouží výstupní perifé
 
 ## Periferie
 V rámci projektu bylo uvažováno a použito kombinované teplotní a vlhkostní čidlo, hodiny reálného času, čidlo osvětlení, čidlo půdní vlhkosti, 
-tepelný člen, ventilátor, nebulizér, ventil a LED pásek. Podrobnější popis jednotlivých periferií naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
+tepelný člen, ventilátor, nebulizér, ventil a LED pásek. Podrobnější popis jednotlivých periferií naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx).
 
 ## Sofwarový popis
 Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, tak pro osobní počítač. Zatímco program pro mikrokontroler byl napsán v jazyce C, program pro osobní počítač byl napsán v Pythonu.
 
 
 ### Python
-Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci] pro Python (https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html) nebo v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf) k projektu.
+Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html) pro Python nebo v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx) k projektu.
 
 
 ### Náhled na zařízení s řídícím osobním počítačem v pozadí
@@ -66,11 +66,11 @@ Veškerá sériová komunikace probíhá na rychlost **9600 Bd**. Je využíván
 Přijatá data ze sériového portu je nutné uložit, zpracovat a uložit do rozhraní, a poté jejich aplikovat aktualizaci, aby se změny projevily v hlavním okně. 
 Třída [raw_data](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/raw_data.py) složí jako úložný prostor pro přijatá data. Jednotlivé byty jsou uloženy v listu. Tato třída je následně zpracována třídou [data_file](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/data_file.py). Zde dochází k převodu dat na smysluplnou zobrazitelnou hodnotu. Tato data jsou ukládána do textového souboru database.txt, který slouží jako úložiště naměřených hodnot pro pozdější zpracování. Pro grafické zpracování je nutné data z textového souboru načíst. To zajišťuje třída [database](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/database.py). 
 Při zpracovávání dat je nutné převádět názvy dnů v týdnu na číselné hodnoty a zpětně, stejně jako názvy měsíců na číselné hodnoty. Převod názvů dnů zajišťuje knihovna [num_and_days](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/num_and_days.py), převod názvů měsíců na číslo funkce [month2num](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/month2num.py).
-Podrobnější informace naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
+Podrobnější informace naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx).
 
 
 ## Knihovny
-Firmware mikrokontroleru využívá několik knihoven. Knihovna [uart](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/uart) byla převzata z [19](http://www.peterfleury.epizy.com/avr-software.html?i=2). Použitá verze byla převzata z [20](https://github.com/tomas-fryza/avr-course/tree/master/lab5-uart). Knihovna [twi](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/twi) byla převzata z [21](https://github.com/tomas-fryza/avr-course/tree/master/lab6-i2c). Ani jedna z nich nebyla upravována. Ostatní knihovny byly vytvořeny spolu s projektem. Ty naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
+Firmware mikrokontroleru využívá několik knihoven. Knihovna [uart](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/uart) byla převzata z [19](http://www.peterfleury.epizy.com/avr-software.html?i=2). Použitá verze byla převzata z [20](https://github.com/tomas-fryza/avr-course/tree/master/lab5-uart). Knihovna [twi](https://github.com/VojtaKudela/BPC-DE2/tree/main/Project-02-03/lib/twi) byla převzata z [21](https://github.com/tomas-fryza/avr-course/tree/master/lab6-i2c). Ani jedna z nich nebyla upravována. Ostatní knihovny byly vytvořeny spolu s projektem. Ty naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx).
 
 
 ## Instrukční list
@@ -83,7 +83,7 @@ Analogové stupnice mají následující rozsah:
 -	Půdní vlhkost – 0 až 100 %
 -	Osvětlení – 1 až 1000 lx
 
-Stupnice osvětlení je logaritmická, ostatní jsou lineární. Podrobnější instrukční návod naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
+Stupnice osvětlení je logaritmická, ostatní jsou lineární. Podrobnější instrukční návod naleznete v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx).
 
 
 
