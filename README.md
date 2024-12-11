@@ -51,7 +51,7 @@ Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, 
 
 
 ### Python
-Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html) nebo v této [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf).
+Úkolem programu pro osobní počítač je sbírat data vysílaná zařízením a vysílat instrukce k regulaci měřených veličin. Aplikace též umožňuje změnit čas zařízení a graficky zobrazit změřené hodnoty. Samotnou aplikaci spustí soubor [Tropical_plants](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/Tropical_plants.py). Tento program vytvoří aplikaci [GUI_main](https://github.com/VojtaKudela/BPC-DE2/blob/main/Python_GUI/GUI_main.py) a spustí ji. Podrobný popis všech použitých tříd a funkcí se nachází v této [dokumentaci] pro Python (https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html) nebo v [dokumentaci](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Documentation-final.pdf) k projektu.
 
 
 ### Náhled na zařízení s řídícím osobním počítačem v pozadí
