@@ -59,7 +59,7 @@ Pro funkci zařízení bylo nezbytné vytvořit jak program pro mikrokontroler, 
 
 
 ## Sériová komunikace
-Veškerá sériová komunikace probíhá na rychlost **9600 Bd**. Je využíván sériový port počítače **COM3**. Aby se ušetřil datový tok, jsou zasílány přímo číselné hodnoty, nikoli jejich zápis v ASCII kódu. Osobní počítač vysílá dva různé datové balíčky; první nese informaci o **nastavení času**, druhý o **nastavení** regulovaných b. Mikrokontroler vysílá pouze jeden balíček.
+Veškerá sériová komunikace probíhá na rychlost **9600 Bd**. Je využíván sériový port počítače **COM3**. Aby se ušetřil datový tok, jsou zasílány přímo číselné hodnoty, nikoli jejich zápis v ASCII kódu. Osobní počítač vysílá dva různé datové balíčky; první nese informaci o **nastavení času**, druhý o **nastavení** regulovaných veličin. Mikrokontroler vysílá pouze jeden balíček.
 
 
 ### Zpracování přijatých dat z mikrokontroleru
