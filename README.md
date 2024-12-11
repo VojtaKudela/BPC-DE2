@@ -94,7 +94,8 @@ Pro ukázku obsluhy zařízení a jeho činnosti za chodu ve formě videa klikn�
 ## Dokumentace
 - [PC rozhraní](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/Python/html/index.html)
 - [AVR - firmware](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
-- [Dokumentace k projektu](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+- [Dokumentace ke knihovnám k MBD systému](https://raw.githack.com/VojtaKudela/BPC-DE2/refs/heads/main/Documentation/AVR-C/html/index.html)
+- [Dokumentace k projektu](https://github.com/VojtaKudela/BPC-DE2/blob/main/Documentation/Dokumentace-final_version.docx)
 
 
 ## Použité nástroje
